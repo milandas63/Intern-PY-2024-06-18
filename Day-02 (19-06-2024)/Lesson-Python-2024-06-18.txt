@@ -1,0 +1,34 @@
+Start date: 2024-06-18
+Time Session-1: 10:30 am to 12:30 pm (Practical Session)
+Time Session-2: 03:30 pm to 05:30 pm (Class Room Mentoring)
+Total Strength: 20
+Subject: Python
+Repo URL: https://github.com/milandas63/Intern-PY-2024-06-18/
+
+
++---------------------+
+| Tuesday, 18-06-2024 |  Day-01
++---------------------+
+    =	Python was created by GUIDO VAN ROSSUM, and first released on February 20, 1991.
+		While you may know the python as a large snake, the name of the Python
+		programming language comes from an old BBC television comedy sketch series
+		called Monty Python's Flying Circus.
+
+	=	The name Python comes from Monty Python. When Guido van Rossum was creating
+		Python, he was also reading the scripts from BBC's Monty Python's Flying
+		Circus. He thought the name Python was appropriately short and slightly
+		mysterious.
+
+
++-----------------------+
+| Wednesday, 19-06-2024 |  Day-02
++-----------------------+
+    =   pyramid.py
+        diamond.py
+        palindrome
+
+    =   ASSIGNMENT
+        Write python code for the pattern programs:
+        d, e, f & n
+
+        Align the program tables.py
