@@ -1,0 +1,236 @@
+Start date: 2024-06-18
+Time Session-1: 10:30 am to 12:30 pm (Practical Session)
+Time Session-2: 03:30 pm to 05:30 pm (Class Room Mentoring)
+Total Strength: 20
+Subject: Python
+Repo URL: https://github.com/milandas63/Intern-PY-2024-06-18/
+
+
++---------------------+
+| Tuesday, 18-06-2024 |  Day-01
++---------------------+
+    =	Python was created by GUIDO VAN ROSSUM, and first released on February 20, 1991.
+		While you may know the python as a large snake, the name of the Python
+		programming language comes from an old BBC television comedy sketch series
+		called Monty Python's Flying Circus.
+
+	=	The name Python comes from Monty Python. When Guido van Rossum was creating
+		Python, he was also reading the scripts from BBC's Monty Python's Flying
+		Circus. He thought the name Python was appropriately short and slightly
+		mysterious.
+
+
++-----------------------+
+| Wednesday, 19-06-2024 |  Day-02
++-----------------------+
+    =   pyramid.py
+        diamond.py
+        palindrome
+
+    =   ASSIGNMENT
+        Write python code for the pattern programs:
+        d, e, f & n
+
+        Align the program tables.py
+
+
++----------------------+
+| Thursday, 20-06-2024 |  Day-03
++----------------------+
+    >>>
+    >>>
+    >>> # Single line comment
+    >>> """
+    ... These quotes allow to create
+    ... multi line comment with
+    ... in the python program
+    ... """
+    '\nThese quotes allow to create\nmulti line comment with\nin the python program\n'
+    >>>
+    >>>
+    >>> """
+    ... sdfsdfsdfsdfsafd
+    ... sdfsadfsafsafsfsadf
+    ... sadfsadfsafsaf
+    ... """
+    '\nsdfsdfsdfsdfsafd\nsdfsadfsafsafsfsadf\nsadfsadfsafsaf\n'
+    >>> 45 + 35
+    80
+    >>> 51 - 40
+    11
+    >>> 10 * 12
+    120
+    >>> 225 / 5
+    45.0
+    >>>
+    >>>
+    >>> name = 'Narendra Modi'
+    >>> name
+    'Narendra Modi'
+    >>>
+    #   LIST
+    >>> pms = ['Jawaharlal','Girilal','Indira','Rajeev']
+    >>> pms
+    ['Jawaharlal', 'Girilal', 'Indira', 'Rajeev']
+    >>> pms + [25, 35, 26, 46]
+    ['Jawaharlal', 'Girilal', 'Indira', 'Rajeev', 25, 35, 26, 46]
+    >>> pms
+    ['Jawaharlal', 'Girilal', 'Indira', 'Rajeev']
+    >>> pms = pms + [25, 35, 26, 46]
+    >>> pms
+    ['Jawaharlal', 'Girilal', 'Indira', 'Rajeev', 25, 35, 26, 46]
+    >>>
+    >>>
+    >>> pms[3]
+    'Rajeev'
+    #   A collection similar to an array of any data type. A list is embedded with square
+    #   brackets
+    >>>
+    >>>
+    #   Dictionary
+    >>> dict = {'name':'Milan Das','age':63,'gender':'Male','location':'Bhubaneswar'}
+    >>> dict['location']
+    'Bhubaneswar'
+    >>> dict['age']
+    63
+    #   A collection of multiple name:value pairs. A dictionary is embedded within curly braces
+    >>>
+    #   SET
+    >>> nos = {2,4,7,3,6,3,2,22,3,3,5,5,5,5,5}
+    >>> nos
+    {2, 3, 4, 5, 6, 7, 22}
+    >>> nos = {2,4,7,3,6,3,2,22,3,3,5,5,5,5,5,8}
+    >>> nos
+    {2, 3, 4, 5, 6, 7, 8, 22}
+    >>>
+    #   A collection of data that is not redundent + the date is sorted in assending order.
+    #   A set is embedded within curly braces.
+
+    =   ASSIGNMENT
+        37: Repetitively sum all digits of a number to determine the unisum (single digit)?
+            Example:     728394 = 7+2+8+3+9+4 = 33 = 3+3 = 6
+                     9778911223 = 9+7+7+8+9+1+1+2+2+3 = 49 = 4+9 = 13 = 1+3 = 4
+                     7978168568 = 7+9+7+8+1+6+8+5+6+8 = 65 = 6+5 = 11 = 1+1 = 2
+
+        38: Write a function that takes a list of strings and prints them, one per line, in
+            a rectangular frame.
+            For example the list ["Hello", "World", "in", "a", "frame"] gets printed as:
+                *********
+                * Hello *
+                * World *
+                * in    *
+                * a     *
+                * frame *
+                *********
+
++--------------------+
+| Friday, 21-06-2024 |  Day-04
++--------------------+
+    =   The string data type:
+
+    =   List of keywords used in Python:
+        There are 36 keywords in Python.
+        ['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await',
+         'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except',
+         'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda',
+         'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with',
+         'yield']
+
+    =   In an OOPs language, there are basically 3 member within a class:
+        1)  Field/Variable members
+        2)  Constructor members
+        3)  Method/Function members
+
+    =   class Human:
+            def __init__(self):
+                print('Line from Human class')
+        
+    =   Exception Handling
+            try:
+                xxxxxxxxxxxxxxxxxx
+                xxxxxxxxxxxxxxxxxx
+                xxxxxxxxxxxxxxxxxx
+            except <ErrorName>:
+                yyyyyyyyyyyyyyyyyy
+                yyyyyyyyyyyyyyyyyy
+            except <ErrorName>:
+                zzzzzzzzzzzzzzzzzz
+                zzzzzzzzzzzzzzzzzz
+            finally:
+                ffffffffffffffffff
+                ffffffffffffffffff
+
+
+
+    =   Python Built-in Exceptions
+        #   EXCEPTION 	            DESCRIPTION
+        >   ArithmeticError 	    Raised when an error occurs in numeric calculations
+        >   AssertionError 	        Raised when an assert statement fails
+                                    
+        >   AttributeError 	        Raised when attribute reference or assignment fails
+        >   Exception 	            Base class for all exceptions
+        >   EOFError 	            Raised when the input() method hits an "end of file"
+                                    condition (EOF)
+        >   FloatingPointError 	    Raised when a floating point calculation fails
+        >   GeneratorExit 	        Raised when a generator is closed (with the close() method)
+        >   ImportError 	        Raised when an imported module does not exist
+        >   IndentationError 	    Raised when indentation is not correct
+        >   IndexError 	            Raised when an index of a sequence does not exist
+        >   KeyError 	            Raised when a key does not exist in a dictionary
+        >   KeyboardInterrupt 	    Raised when the user presses Ctrl+c, Ctrl+z or Delete
+        >   LookupError 	        Raised when errors raised cant be found
+        >   MemoryError 	        Raised when a program runs out of memory
+        >   NameError 	            Raised when a variable does not exist
+        >   NotImplementedError 	Raised when an abstract method requires an inherited 
+                                    class to override the method
+        >   OSError 	            Raised when a system related operation causes an error
+        >   OverflowError 	        Raised when the result of a numeric calculation is too large
+        >   ReferenceError 	        Raised when a weak reference object does not exist
+        >   RuntimeError 	        Raised when an error occurs that do not belong to any 
+                                    specific exceptions
+        >   StopIteration 	        Raised when the next() method of an iterator has no 
+                                    further values
+        >   SyntaxError 	        Raised when a syntax error occurs
+        >   TabError 	            Raised when indentation consists of tabs or spaces
+        >   SystemError 	        Raised when a system error occurs
+        >   SystemExit 	            Raised when the sys.exit() function is called
+        >   TypeError 	            Raised when two different types are combined
+        >   UnboundLocalError 	    Raised when a local variable is referenced before assignment
+        >   UnicodeError 	        Raised when a unicode problem occurs
+        >   UnicodeEncodeError 	    Raised when a unicode encoding problem occurs
+        >   UnicodeDecodeError 	    Raised when a unicode decoding problem occurs
+        >   UnicodeTranslateError 	Raised when a unicode translation problem occurs
+        >   ValueError 	            Raised when there is a wrong value in a specified data type
+        >   ZeroDivisionError 	    Raised when the second operator in a division is zero
+
+    =   ArithmeticError types in Python include:
+        >   OverFlowError
+        >   ZeroDivisionError
+                arithmetic = 5/0
+                print(arithmetic)
+        >   FloatingPointError
+
+    =   ASSIGNMENT-1
+        Google and provide example code for every Error listed above.
+
+    =   ASSIGNMENT-2
+        Write a program to find the number of alphabet occurance in a string?
+        Example:
+            Hello World    Students Allowed       Holocaust
+               D = 1           A - 1                A - 1
+               E - 1           D - 2                C - 1
+               H - 1           E - 2                H - 1
+               L - 3           L - 1                L - 1
+               O - 2           N - 1                O - 2
+               R - 1           O - 1                S - 1
+               W - 1           S - 2                T - 1
+                               T - 2                U - 1
+                               U - 1
+                               W - 1
+
+
+    =   ASSIGNMENT-3
+        Self Study:
+        1. https://www.javatpoint.com/python-tutorial
+        2. https://www.tutorialspoint.com/python/index.htm
+        3. https://www.w3schools.com/python/
