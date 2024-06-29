@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>Students' Form</title>
+        <script>
+            function validate() {
+                alert("I am in validate()");
+                return false;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Student Information System</h1>
+        <hr><br>
+        <form action="hyperlink.html" onsubmit="return validate();">
+            <table align="center" cellspacing="">
+                <tr>
+                    <td><label>Student's Name:</label></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td><label>Father's Name:</label></td>
+                    <td><input type="text"><br></td>
+                </tr>
+                <tr>
+                    <td>Gender: </td>
+                    <td>
+                        <input type="radio" name="gender" value="M">Male &nbsp;&nbsp
+                        <input type="radio" name="gender" value="F">Female &nbsp;&nbsp
+                        <input type="radio" name="gender" value="O">Others
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Date of Birth: </label></td>
+                    <td><input type="date"></td>
+                </tr>
+                <tr>
+                    <td><label>Highest Qualification: </label>/td>
+                    <td>
+                        <select name="" id="">
+                            <option value="">Select</option>
+                            <option value="hsc">Higher Secondary Certificate</option>
+                            <option value="+2">Intermediate</option>
+                            <option value="+3">Bachelor Degree</option>
+                            <option value="pg">Post Graduate</option>
+                            <option value="mp">Master in Philosophy</option>
+                            <option value="phd">Doctorate</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Mobile Number: </label></td>
+                    <td><input type="number"></td>
+                </tr>
+                <tr>
+                    <td><label>Password: </label></td>
+                    <td><input type="password"></td>
+                </tr>
+            </table>
+            <br><br>
+            <input type="submit">
+        </form>
+    </body>
+</html>
