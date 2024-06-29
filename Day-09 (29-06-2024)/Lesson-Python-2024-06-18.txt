@@ -387,6 +387,9 @@ Repo URL: https://github.com/milandas63/Intern-PY-2024-06-18/
     =   Creating part of an image as link
     =   Use frameset to divide the screen into rows and columns
 
+    =   ASSIGNMENT
+        Complete all the above incomplete programs.
+
 
 
 
