@@ -52,7 +52,7 @@
         </tr>
         <tr>
             <td>1</td>
-            <td>Bhadrak</td>
+            <td>Jajpur</td>
             <td>50</td>
             <td>100</td>
             <td>150</td>
@@ -72,7 +72,7 @@
         </tr>
         <tr>
             <td>2</td>
-            <td>Balesore</td>
+            <td>Kendrapara</td>
             <td>45</td>
             <td>95</td>
             <td>145</td>
