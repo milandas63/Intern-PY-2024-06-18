@@ -1,5 +1,17 @@
-triangle(10)
-  for i in range(1, height +1):
-    alphabets=''.join (chr(64+x)for x in range(1,i+1))
-    palindromic_alphabets=alphabets+alphabets[-2::-1]
-    print(palindromic_alphabets.center(2*height-1))
+
+spaces = 40
+stars = 1
+charac = '*'
+
+for i in range(0,10):
+	for j in range(0,spaces):
+		print(' ',end='')
+	for j in range(0,stars):
+		if j==0 or j==(stars-1) or i==9:
+			charac = '*'
+		else:
+			charac = ' '
+		print(charac,end='')
+	print()
+	spaces = spaces-1
+	stars = stars+2
