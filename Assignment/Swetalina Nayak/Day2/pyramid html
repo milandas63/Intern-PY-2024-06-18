@@ -1,0 +1,8 @@
+<html>
+    <head>
+        <title>introduction of java script</title>
+    </head>
+    <script>
+        document.writeln("<h1>");
+            var space = 35;
+            var stars =                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
