@@ -1,0 +1,5028 @@
++------------------------+
+|  JAVASCRIPT QUESTIONS  |
++------------------------+
+
+ 1. Write a JavaScript program to display the current day and time in the following format.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <title>JavaScript current day and time</title>
+        </head>
+        <body>
+            <script>
+                function showDay() {
+                    var today = new Date();
+                    var day = today.getDay();
+                    var daylist = ["Sunday","Monday","Tuesday","Wednesday ","Thursday","Friday","Saturday"];
+                    document.write("Today is : " + daylist[day] + ".");
+                    var hour = today.getHours();
+                    var minute = today.getMinutes();
+                    var second = today.getSeconds();
+                    var prepand = (hour >= 12)? " PM ":" AM ";
+                    hour = (hour >= 12)? hour - 12: hour;
+                    if (hour===0 && prepand===' PM ') {
+                        if (minute===0 && second===0) {
+                            hour=12;
+                            prepand=' Noon';
+                        } else {
+                            hour=12;
+                            prepand=' PM';
+                        }
+                    }
+                    if (hour===0 && prepand===' AM ') {
+                        if (minute===0 && second===0) {
+                            hour=12;
+                            prepand=' Midnight';
+                        } else {
+                            hour=12;
+                            prepand=' AM';
+                        }
+                    }
+                    document.write("Current Time : "+hour + prepand + " : " + minute + " : " + second);
+                }
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    Today is : Tuesday.
+    Current Time : 10 PM  : 30 : 38
+    Explanations:
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+ 2. Write a JavaScript program to print the contents of the current window.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset=utf-8 />
+            <title>Print the current page.</title>
+            <script>
+                function print_current_page() {
+                    window.print();
+                }
+            </script>
+        </head>
+        <body>
+            <p></p>
+            <p>Click the button to print the current page.</p>
+            <button onclick="print_current_page()">Print this page</button>
+        </body>
+    </html>
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+ 3. Write a JavaScript program to get the current date.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <title>Write a JavaScript program to get the current date.</title>
+        </head>
+        <body>
+            <script>
+                var today = new Date();
+                var dd = today.getDate();
+
+                var mm = today.getMonth()+1;
+                var yyyy = today.getFullYear();
+                if(dd<10) {
+                    dd='0'+dd;
+                }
+
+                if(mm<10) {
+                    mm='0'+mm;
+                }
+                today = mm+'-'+dd+'-'+yyyy;
+                document.write(today);
+                today = mm+'/'+dd+'/'+yyyy;
+                document.write(today);
+                today = dd+'-'+mm+'-'+yyyy;
+                document.write(today);
+                today = dd+'/'+mm+'/'+yyyy;
+                document.write(today);
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    01-03-2020
+    01/03/2020
+    09-01-2020
+    09/01/2020
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+ 4. Write a JavaScript program to find the area of a triangle where lengths of the
+    three of its sides are 5, 6, 7.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset=utf-8 />
+            <title>The area of a triangle</title>
+        </head>
+        <body>
+            <script>
+                var side1 = 5;
+                var side2 = 6;
+                var side3 = 7;
+                var s = (side1 + side2 + side3)/2;
+                var area =  Math.sqrt(s*((s-side1)*(s-side2)*(s-side3)));
+                document.write(area);
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    14.696938456699069
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+ 5. Write a JavaScript program to rotate the string 'ÌIG Edutech Varsity' in right
+    direction by periodically removing one letter from the end of the string and
+    attaching it to the front.
+    <!DOCTYPE html>
+    <html>
+        <head>
+        <title>JavaScript basic animation</title>
+            <script type="text/javascript">
+                function animate_string(id) {
+                    var element = document.getElementById(id);
+                    var textNode = element.childNodes[0]; // assuming no other children
+                    var text = textNode.data;
+
+                    setInterval(
+                        function () {
+                            text = text[text.length-1] + text.substring(0, text.length-1);
+                            textNode.data = text;
+                        }, 100
+                    );
+                }
+            </script>
+        </head>
+        <body onload="animate_string('target')"
+            <pre id="target">the coders nation </pre>
+        </body>
+    </html>
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+ 6. Write a JavaScript program to determine whether a given year is a leap year in the Gregorian calendar.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset=utf-8 />
+            <title>Find Leap Year</title>
+            <script
+                function leapyear(year) {
+                    return (year%100 === 0) ? (year%400 === 0) : (year%4 === 0);
+                }
+            </script
+        </head>
+        <body>
+            <script>
+                document.write(leapyear(2020)+"<br>");
+                document.write(leapyear(2016)+"<br>");
+                document.write(leapyear(2000)+"<br>");
+                document.write(leapyear(1700)+"<br>");
+                document.write(leapyear(1800)+"<br>");
+                document.write(leapyear(100)+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    true
+    true
+    false
+    false
+    false
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+ 7. Write a JavaScript program to find 1st January is being a Sunday between 2014 and 2050.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset=utf-8 />
+            <title>A Program to find 1st January is being a Sunday between 2014 and 2050.</title>
+        </head>
+        <body>
+            <script>
+                document.write('<hr>');
+                for (var year = 2014; year <= 2050; year++) {
+                    var d = new Date(year, 0, 1);
+                    if ( d.getDay() === 0 )
+                        document.write("1st January is being a Sunday  "+year);
+                }
+                document.write('<hr>');
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+    --------------------------------------------------------------------
+    1st January is being a Sunday  2017
+    1st January is being a Sunday  2023
+    1st January is being a Sunday  2034
+    1st January is being a Sunday  2040
+    1st January is being a Sunday  2045
+    --------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+ 8. Write a JavaScript program where the program takes a random integer between 1 to 10, the user is then prompted
+    to input a guess number. If the user input matches with guess number, the program will display a message "Good Work"
+    otherwise display a message "Not matched".
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset=utf-8 />
+            <title>Guess a number</title>
+        </head>
+        <body>
+            <script>
+                // Get a random integer from 1 to 10 inclusive
+                const num = Math.ceil(Math.random() * 10);
+                document.write(num);
+                const gnum = prompt('Guess the number between 1 and 10 inclusive');
+                if (gnum == num)
+                   document.write('Matched');
+                else
+                   document.write('Not matched, the number was '+gnum);
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    Matched
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+ 9. Write a JavaScript program to calculate days left until next Christmas.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset=utf-8 />
+            <title>Write a JavaScript program to calculate days left until next Christmas</title>
+        </head>
+        <body>
+            <script>
+                today=new Date();
+                var cmas=new Date(today.getFullYear(), 11, 25);
+                if (today.getMonth()==11 && today.getDate()>25) {
+                    cmas.setFullYear(cmas.getFullYear()+1);
+                }
+                var one_day=1000*60*60*24;
+                document.write(Math.ceil((cmas.getTime()-today.getTime())/(one_day))+" days left until Christmas!");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    349 days left until Christmas!
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+10. Write a JavaScript program to calculate multiplication and division of two numbers (input from user).
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset=utf-8 />
+            <title>JavaScript program to calculate multiplication and division of two numbers </title>
+            <style type="text/css">
+                body {margin: 30px;}
+            </style>
+            <script>
+                function multiplyBy() {
+                    num1 = document.getElementById("firstNumber").value;
+                    num2 = document.getElementById("secondNumber").value;
+                    document.getElementById("result").innerHTML = num1 * num2;
+                }
+
+                function divideBy() {
+                    num1 = document.getElementById("firstNumber").value;
+                    num2 = document.getElementById("secondNumber").value;
+                    document.getElementById("result").innerHTML = num1 / num2;
+                }
+            </script>
+        </head>
+        <body>
+            <form>
+                1st Number : <input type="text" id="firstNumber" /><br>
+                2nd Number: <input type="text" id="secondNumber" /><br>
+                <input type="button" onClick="multiplyBy()" Value="Multiply" />
+                <input type="button" onClick="divideBy()" Value="Divide" />
+            </form>
+            <p>The Result is : <br>
+            <span id = "result"></span>
+            </p>
+        </body>
+    </html>
+
+Copy
+JavaScript Code:
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+11. Write a JavaScript program to convert temperatures to and from Celsius, Fahrenheit.
+    [Formula : c/5 = (f-32)/9 [ where c = temperature in Celsius and f = temperature in Fahrenheit ]
+    Expected Output :
+    60°C is 140 °F
+    45°F is 7.222222222222222°C
+
+    <html>
+        <head>
+            <title></title>
+            <script>
+                function cToF(celsius) {
+                    var cTemp = celsius;
+                    var cToFahr = cTemp * 9 / 5 + 32;
+                    var message = cTemp+'\xB0C is ' + cToFahr + ' \xB0F.';
+                    document.write(message+"<br>");
+                }
+                function fToC(fahrenheit) {
+                    var fTemp = fahrenheit;
+                    var fToCel = (fTemp - 32) * 5 / 9;
+                    var message = fTemp+'\xB0F is ' + fToCel + '\xB0C.';
+                    document.write(message+"<br>");
+                }
+            </script>
+        </head>
+        <body>
+            <h2>Temperature Meter</h2>
+            <script>
+                cToF(60);
+                fToC(45);
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    60°C is 140 °F.
+    45°F is 7.222222222222222°C.
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+12. Write a JavaScript program to get the website URL (loading page).
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <title>Write a JavaScript program to get the website URL (loading page)</title>
+        </head>
+        <body>
+            <script>
+                //Write a JavaScript program to get the website URL (loading page)
+                document.write(document.URL+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Output:
+
+    https://s.codepen.io/boomerang/iFrameKey-2b7766e5-a65b-9c2a-459d-dabf749b1799/index.html
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+13. Write a JavaScript exercise to create a variable using a user-defined name.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>Create a variable using a user-defined name</title>
+        </head>
+        <body>
+            <script>
+                var var_name = 'abcd';
+                var n = 120;
+                this[var_name] = n;
+                document.write(this[var_name]+"<br>")
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    120
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+14. Write a JavaScript exercise to get the extension of a filename.
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>The extension of a filename.</title>
+    </head>
+    <body>
+        <script>
+            filename = "system.php"
+            document.write(filename.split('.').pop()+"<br>");
+            filename = "abc.js"
+            document.write(filename.split('.').pop()+"<br>");
+        </script>
+    </body>
+    </html>
+
+    Sample Output:
+
+    php
+    js
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+15. Write a JavaScript program to get the difference between a given number and 13,
+    if the number is greater than 13 return double the absolute difference.
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>The difference between a given number and 13, if the number is greater than 13 return double the absolute difference.</title>
+
+    </head>
+    <body>
+
+    </body>
+    </html>
+
+    function difference(n) {
+        if (n <= 13)
+            return 13 - n;
+        else
+            return (n - 13) * 2;
+    }
+    document.write(difference(32)+"<br>");
+    document.write(difference(11)+"<br>");
+
+    Sample Output:
+
+    38
+    2
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+16. Write a JavaScript program to compute the sum of the two given integers. If the two values are same, then returns
+    triple their sum.
+
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to compute the sum of the two given integers. If the two values are same, then return triple their sum</title>
+        </head>
+        <body>
+        </body>
+    </html>
+
+    function sumTriple (x, y) {
+        if (x == y) {
+            return 3 * (x + y);
+        } else {
+            return (x + y);
+        }
+    }
+    document.write(sumTriple(10, 20)+"<br>");
+    document.write(sumTriple(10, 10)+"<br>");
+
+    Sample Output:
+
+    30
+    60
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+17. Write a JavaScript program to compute the absolute difference between a specified number and 19. Returns triple their
+    absolute difference if the specified number is greater than 19.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to compute the absolute difference between a specified number and 19.  Returns triple their absolute difference if the specified number is greater than 19.</title>
+        </head>
+        <body>
+
+        </body>
+    </html>
+
+    function diff_num(n) {
+        if (n <= 19) {
+            return (19 - n);
+        } else {
+            return (n - 19) * 3;
+        }
+    }
+
+    document.write(diff_num(12));
+    document.write(diff_num(19));
+    document.write(diff_num(22));
+
+    Sample Output:
+
+    7
+    0
+    9
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+18. Write a JavaScript program to check two given numbers and return true if one of the number is 50 or if their sum is 50.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to check two given numbers and return true if one of the number is 50 or if their sum is 50.</title>
+        </head>
+        <body>
+
+        </body>
+    </html>
+
+    function test50(x, y) {
+        return ((x == 50 || y == 50) || (x + y == 50));
+    }
+    document.write(test50(50, 50)+"<br>");
+    document.write(test50(20, 50)+"<br>");
+    document.write(test50(20, 20)+"<br>");
+    document.write(test50(20, 30)+"<br>");
+
+    Sample Output:
+
+    true
+    true
+    false
+    true
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+19. Write a JavaScript program to check whether a given integer is within 20 of 100 or 400.
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>JavaScript program to check whether a given integer is within 20 of 100 or 400.</title>
+    </head>
+    <body>
+
+    </body>
+    </html>
+
+    function testhundred(x) {
+      return ((Math.abs(100 - x) <= 20) ||
+         (Math.abs(400 - x) <= 20));
+    }
+
+    document.write(testhundred(10)+"<br>");
+    document.write(testhundred(90)+"<br>");
+    document.write(testhundred(99)+"<br>");
+    document.write(testhundred(199)+"<br>");
+    document.write(testhundred(200)+"<br>");
+
+    Sample Output:
+
+    false
+    true
+    true
+    false
+    false
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+20. Write a JavaScript program to check from two given integers, whether one is positive and another one is negative.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to  check from two given integers, whether one is positive and another one is negative.</title>
+        </head>
+        <body>
+
+        </body>
+    </html>
+
+    function positive_negative(x, y) {
+        if ((x < 0 && y > 0) || x > 0 && y < 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    document.write(positive_negative(2, 2)+"<br>");
+    document.write(positive_negative(-2, 2)+"<br>");
+    document.write(positive_negative(2, -2)+"<br>");
+    document.write(positive_negative(-2, -2)+"<br>");
+
+    Sample Output:
+
+    false
+    true
+    true
+    false
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+21. Write a JavaScript program to create a new string adding "Py" in front of a given string. If the given string begins
+    with "Py" then return the original string.
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>JavaScript program to create a new string adding “Py” in front of a given string. If the given string begins with “Py” then return the original string.</title>
+    </head>
+    <body>
+
+    </body>
+    </html>
+
+    function string_check(str1) {
+        if (str1 === null || str1 === undefined || str1.substring(0, 2) === 'Py') {
+            return str1;
+        }
+        return "Py"+str1;
+    }
+    document.write(string_check("Python")+"<br>");
+    document.write(string_check("thon")+"<br>");
+
+    Sample Output:
+
+    Python
+    Python
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+22. Write a JavaScript program to remove a character at the specified position of a given string and return the new string.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to remove a character at the specified position of a given string and return the new string.</title>
+        </head>
+        <body>
+
+        </body>
+    </html>
+
+    function remove_character(str, char_pos) {
+        part1 = str.substring(0, char_pos);
+        part2 = str.substring(char_pos + 1, str.length);
+        return (part1 + part2);
+    }
+    document.write(remove_character("Python",0)+"<br>");
+    document.write(remove_character("Python",3)+"<br>");
+    document.write(remove_character("Python",5)+"<br>");
+
+    Sample Output:
+
+    ython
+    Pyton
+    Pytho
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+23. Write a JavaScript program to create a new string from a given string changing the position of first and last characters.
+    The string length must be greater than or equal to 1.
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>JavaScript program to create a new string from a given string changing the position of first and last characters.</title>
+    </head>
+    <body>
+    </body>
+    </html>
+
+    function first_last(str1) {
+        if (str1.length <= 1) {
+            return str1;
+        }
+        mid_char = str1.substring(1, str1.length - 1);
+        return (str1.charAt(str1.length - 1)) + mid_char + str1.charAt(0);
+    }
+    document.write(first_last('a')+"<br>");
+    document.write(first_last('ab')+"<br>");
+    document.write(first_last('abc')+"<br>");
+
+    Sample Output:
+
+    a
+    ba
+    cba
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+24. Write a JavaScript program to create a new string from a given string with the first character of the given string added
+    at the front and back.
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>JavaScript program to create a new string from a given string with the first character of the given string added at the front and back.</title>
+    </head>
+    <body>
+
+    </body>
+    </html>
+
+    function front_back(str) {
+      first = str.substring(0,1);
+      return first + str + first;
+    }
+    document.write(front_back('a')+"<br>");
+    document.write(front_back('ab')+"<br>");
+    document.write(front_back('abc')+"<br>");
+
+    Sample Output:
+
+    aaa
+    aaba
+    aabca
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+25. Write a JavaScript program to check whether a given positive number is a multiple of 3 or a multiple of 7.
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>JavaScript program to check whether a given positive number is a multiple of 3 or a multiple of 7. </title>
+    </head>
+    <body>
+
+    </body>
+    </html>
+
+    function test37(x) {
+        if (x % 3 == 0 || x % 7 == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    document.write(test37(12)+"<br>");
+    document.write(test37(14)+"<br>");
+    document.write(test37(10)+"<br>");
+    document.write(test37(11)+"<br>");
+
+    Sample Output:
+
+    true
+    true
+    false
+    false
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+26. Write a JavaScript program to create a new string from a given string taking the last 3 characters and added at both the
+    front and back. The string length must be 3 or more.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to create a new string from a given string taking the last 3 characters and added at
+            both the front and back. The string length must be 3 or more.</title>
+        </head>
+        <body>
+
+        </body>
+    </html>
+
+    function front_back3(str) {
+        if (str.length>=3) {
+            str_len = 3;
+            back = str.substring(str.length-3);
+            return back + str + back;
+        } else
+            return false;
+    }
+    document.write(front_back3("abc")+"<br>");
+    document.write(front_back3("ab")+"<br>");
+    document.write(front_back3("abcd")+"<br>");
+
+    Sample Output:
+
+    abcabcabc
+    false
+    bcdabcdbcd
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+27. Write a JavaScript program to check whether a string starts with 'Java' and false otherwise.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to check whether a string starts with 'Java' and false otherwise.</title>
+            <script>
+                function start_spec_str(str) {
+                    if (str.length < 4) {
+                        return false;
+                    }
+                    front = str.substring(0, 4);
+                    if (front == 'Java') {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
+            </script>
+        </head>
+        <body>
+            document.write(start_spec_str("JavaScript")+"<br>");
+            document.write(start_spec_str("Java")+"<br>");
+            document.write(start_spec_str("Python")+"<br>");
+        </body>
+    </html>
+
+    Sample Output:
+
+    true
+    true
+    false
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+28. Write a JavaScript program to check whether two given integer values are in the range 50..99 (inclusive).
+    Return true if either of them are in the said range.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to check whether two given integer values are in the range 50..99 (inclusive). Return true if either of them are in the said range.</title>
+            <script>
+                function check_numbers(x, y) {
+                    if ((x >= 50 && x <= 99) || (y >= 50 && y <= 99)) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
+            </script>
+        </head>
+        <body>
+            document.write(check_numbers(12, 101)+"<br>");
+            document.write(check_numbers(52, 80)+"<br>");
+            document.write(check_numbers(15, 99)+"<br>");
+        </body>
+    </html>
+
+    Sample Output:
+
+    false
+    true
+    true
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+29. Write a JavaScript program to check whether three given integer values are in the range 50..99 (inclusive).
+    Return true if one or more of them are in the said range.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to check whether three given integer values are in the range 50..99 (inclusive). Return true if one or more of them are in the said range.</title>
+            <script>
+                function check_three_nums(x, y, z) {
+                    return (x >= 50 && x <= 99) || (y >= 50 && y <= 99) || (z >= 50 && z <= 99);
+                }
+            </script>
+        </head>
+        <body>
+            document.write(check_three_nums(50, 90, 99)+"<br>");
+            document.write(check_three_nums(5, 9, 199)+"<br>");
+            document.write(check_three_nums(65, 89, 199)+"<br>");
+            document.write(check_three_nums(65, 9, 199)+"<br>");
+        </body>
+    </html>
+
+    Sample Output:
+
+    true
+    false
+    true
+    true
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+30. Write a JavaScript program to check whether a string "Script" presents at 5th (index 4) position in a given string,
+    if "Script" presents in the string return the string without "Script" otherwise return the original one.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to check whether a string “Script” presents at 5th (index 4) position in a given string, if “Script” presents in the string return the string without “Script” otherwise return the original one.</title>
+            <script>
+                function check_script(str) {
+                    if (str.length < 6) {
+                        return str;
+                    }
+
+                    let result_str = str;
+                    if (str.substring(10, 4) == 'Script') {
+                        result_str = str.substring(0, 4) + str.substring(10,str.length);
+                    }
+                    return result_str;
+                }
+            </script>
+        </head>
+        <body>
+            document.write(check_script("JavaScript")+"<br>");
+            document.write(check_script("CoffeeScript")+"<br>");
+        </body>
+    </html>
+
+    Sample Output:
+
+    Java
+    CoffeeScript
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+31. Write a JavaScript program to find the largest of three given integers.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to find the largest of three given integers.</title>
+            <script>
+                function max_of_three(x, y, z) {
+                    max_val = 0;
+                    if (x > y) {
+                        max_val = x;
+                    } else {
+                        max_val = y;
+                    }
+
+                    if (z > max_val) {
+                        max_val = z;
+                    }
+                    return max_val;
+                }
+            </script>
+        </head>
+        <body>
+            document.write(max_of_three(1,0,1)+"<br>");
+            document.write(max_of_three(0,-10,-20)+"<br>");
+            document.write(max_of_three(1000,510,440)+"<br>");
+        </body>
+    </html>
+
+    Sample Output:
+
+    1
+    0
+    1000
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+32. Write a JavaScript program to find a value which is nearest to 100 from two different given integer values.
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>JavaScript program to find a value which is nearest to 100 from two different given integer values.</title>
+        <script>
+            function near_100(x, y) {
+                if (x != y) {
+                    x1 = Math.abs(x - 100);
+                    y1 = Math.abs(y - 100);
+
+                    if (x1 < y1) {
+                        return x;
+                    }
+                    if (y1 < x1) {
+                        return y;
+                    }
+                    return 0;
+                } else
+                    return false;
+            }
+        </script>
+    </head>
+    <body>
+        document.write(near_100(90, 89)+"<br>");
+        document.write(near_100(-90, -89)+"<br>");
+        document.write(near_100(90, 90)+"<br>");
+    </body>
+    </html>
+
+    Sample Output:
+
+    90
+    -89
+    false
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+33. Write a JavaScript program to check whether two numbers are in range 40..60 or in the range 70..100 inclusive.
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>JavaScript program to check whether two numbers are in range 40..60 or in the range 70..100 inclusive</title>
+        <script>
+            function numbers_ranges(x, y) {
+                if((x >= 40 && x <= 60 && y >= 40 && y <= 60)
+                    ||
+                   (x >= 70 && x <= 100 && y >= 70 && y <= 100)) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        document.write(numbers_ranges(44, 56)+"<br>");
+        document.write(numbers_ranges(70, 95)+"<br>");
+        document.write(numbers_ranges(50, 89)+"<br>");
+    </body>
+    </html>
+
+    Sample Output:
+
+    true
+    true
+    false
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+34. Write a JavaScript program to find the larger number from the two given positive integers, the two numbers are in
+    the range 40..60 inclusive.
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>JavaScript program to find the larger number from the two given positive integers, the two numbers  are in the range 40..60 inclusive.</title>
+        <script>
+            function max_townums_range(x, y) {
+                if( (x >= 40) && (x <= 60) && (y >= 40 && y <= 60) ) {
+                    if(x === y) {
+                        return "Numbers are the same";
+                    }else if (x > y) {
+                        return x;
+                    } else {
+                        return y;
+                    }
+                } else {
+                    return "Numbers don't fit in range";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        document.write(max_townums_range(45, 60)+"<br>");
+        document.write(max_townums_range(25, 60)+"<br>");
+        document.write(max_townums_range(45, 80)+"<br>");
+    </body>
+    </html>
+
+    Output :
+
+    60
+    Numbers don't fit in range
+    Numbers don't fit in range
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+35. Write a program to check whether a specified character exists within the 2nd to 4th position in a given string.
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>JavaScript program to check whether a specified character exists within the 2nd to 4th position in a given string</title>
+        <script>
+            function check_char(str, char) {
+                ctr = 0;
+                for (let i = 0; i < str.length; i++) {
+                    if (str.charAt(i) == char) {
+                        ctr++;
+                    }
+                }
+                return (ctr >= 2 && ctr <= 4);
+            }
+        </script>
+    </head>
+    <body>
+        document.write(check_char("Python", "y")+"<br>");
+        document.write(check_char("JavaScript", "a")+"<br>");
+        document.write(check_char("Console", "o")+"<br>");
+    </body>
+    </html>
+
+    Sample Output:
+
+    false
+    true
+    true
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+36. Write a JavaScript program to check whether the last digit of the three given positive integers is same.
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>JavaScript program to check whether the last digit of the three given integers is same.</title>
+        <script>
+            function last_digit(x, y, z) {
+                if ((x > 0) && y > 0 && z > 0) {
+                    return (x % 10 == y % 10 && y % 10 == z % 10 && x % 10 == z % 10);
+                } else
+                    return false;
+            }
+        </script>
+    </head>
+    <body>
+        document.write(last_digit(20, 30, 400)+"<br>");
+        document.write(last_digit(-20, 30, 400)+"<br>");
+        document.write(last_digit(20, -30, 400)+"<br>");
+        document.write(last_digit(20, 30, -400)+"<br>");
+    </body>
+    </html>
+
+    Sample Output:
+
+    true
+    false
+    false
+    false
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+37. Write a JavaScript program to create new string with first 3 characters are in lower case from a given string.
+    If the string length is less than 3 convert all the characters in upper case.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to create new string with first 3 characters are in lower case from a given string. If the string length is less than 3 convert all the characters in upper case.</title>
+            <script>
+                function upper_lower(str) {
+                    if (str.length < 3) {
+                        return str.toUpperCase();
+                    }
+                    front_part = (str.substring(0, 3)).toLowerCase();
+                    back_part = str.substring(3, str.length);
+                    return front_part + back_part;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.write(upper_lower("Python")+"<br>");
+                document.write(upper_lower("Py")+"<br>");
+                document.write(upper_lower("JAVAScript")+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    python
+    PY
+    javAScript
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+38. Write a JavaScript program to check the total marks of a student in various examinations. The student will get A+ grade
+    if the total marks are in the range 89..100 inclusive, if the examination is "Final-exam." the student will get A+ grade
+    and total marks must be greater than or equal to 90. Return true if the student get A+ grade or false otherwise.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to check the total marks of a student in various examinations</title>
+            <script>
+                function exam_status(totmarks,is_exam) {
+                    if (is_exam) {
+                        return totmarks >= 90;
+                    }
+                    return (totmarks >= 89 && totmarks <= 100);
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.write(exam_status("78", " ")+"<br>");
+                document.write(exam_status("89", "true ")+"<br>");
+                document.write(exam_status("99", "true ")+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    false
+    false
+    true
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+39. Write a JavaScript program to compute the sum of the two given integers, If the sum is in the range 50..80 return 65
+    other wise return 80.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to compute the sum of the two given integers, If the sum is in the range 50..80  return 65 other wise return 80.</title>
+            <script>
+                function sortaSum(x, y) {
+                    const sum_nums = x + y;
+                    if (sum_nums >= 50 && sum_nums <= 80) {
+                        return 65;
+                    }
+                    return 80;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.write(sortaSum(30,20)+"<br>");
+                document.write(sortaSum(90,80)+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    65
+    80
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+40. Write a JavaScript program to check from two given integers whether one of them is 8 or their sum or difference is 8.
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Write a JavaScript program to check from two given integers whether one of them is 8 or their sum or difference is 8.</title>
+        <script>
+            function check8(x, y) {
+                if (x == 8 || y == 8) {
+                    return true;
+                }
+                if (x + y == 8 || Math.abs(x - y) == 8) {
+                    return true;
+                }
+
+                return false;
+            }
+        </script>
+    </head>
+    <body>
+        <script>
+            document.write(check8(7, 8)+"<br>");
+            document.write(check8(16, 8)+"<br>");
+            document.write(check8(24, 32)+"<br>");
+            document.write(check8(17, 18)+"<br>");
+        </script>
+    </body>
+    </html>
+
+    Sample Output:
+
+    true
+    true
+    true
+    false
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+41. Write a JavaScript program to check three given numbers, if the three numbers are same return 30 otherwise return 20 and
+    if two numbers are same return 40.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to check three given numbers, if the three numbers are same return 30 otherwise return 20 and if two numbers are same return 40.</title>
+            <script>
+                function three_numbers(x, y, z) {
+                  if (x == y && y == z) {
+                    return 30;
+                  }
+
+                  if (x == y || y == z || z == x) {
+                    return 40;
+                  }
+
+                  return 20;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.write(three_numbers(8, 8, 8)+"<br>");
+                document.write(three_numbers(8, 8, 18)+"<br>");
+                document.write(three_numbers(8, 7, 18)+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    30
+    40
+    20
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+42. Write a JavaScript program to check whether three given numbers are increasing in strict mode or in soft mode.
+    Note: Strict mode -> 10, 15, 31 : Soft mode -> 24, 22, 31 or 22, 22, 31
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>Write a JavaScript program to check whether three given numbers are increasing in strict mode or in soft mode.</title>
+            <script>
+                function number_order(x, y, z ) {
+                    if ( y > x && z > y) {
+                        return "strict mode";
+                    } else if(z > y)
+                        return "Soft mode";
+                    else
+                        return "Undefinded";
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.write(number_order(10,15,31)+"<br>");
+                document.write(number_order(24,22,31)+"<br>");
+                document.write(number_order(50,21,15)+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    strict mode
+    Soft mode
+    Undefinded
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+43. Write a JavaScript program to check from three given numbers (non negative integers) that two or all of them have the same rightmost digit.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to check from three  given numbers (non negative integers) that two  or all of them have the same rightmost digit.</title>
+            <script>
+                function same_last_digit(p, q, r) {
+                    return (p % 10 === q % 10) ||
+                           (p % 10 === r % 10) ||
+                           (q % 10 === r % 10);
+
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.write(same_last_digit(22,32,42)+"<br>");
+                document.write(same_last_digit(102,302,2)+"<br>");
+                document.write(same_last_digit(20,22,45)+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    true
+    true
+    false
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+44. Write a JavaScript program to check from three given integers that whether a number is greater than or equal to 20 and less than one of the others.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to check from three given integers that whether a number is greater than or equal to 20 and less than one of the others.</title>
+            <script>
+                function lessby20_others(x, y, z) {
+                    return (x >= 20 && (x < y || x < z)) ||
+                           (y >= 20 && (y < x || y < z)) ||
+                           (z >= 20 && (z < y || z < x));
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.write(lessby20_others(23, 45, 10)+"<br>");
+                document.write(lessby20_others(23, 23, 10)+"<br>");
+                document.write(lessby20_others(21, 66, 75)+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    true
+    false
+    true
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+45. Write a JavaScript program to check two given integer values and return true if one of the number is 15 or if their sum or difference is 15.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to check two given integer values and return true if one of the number is 15 or if their sum or difference is 15.</title>
+            <script>
+                function test_nmuber(x, y) {
+                    return (x === 15 || y === 15 || x + y === 15 || Math.abs(x - y) === 15);
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.write(test_nmuber(15, 9)+"<br>");
+                document.write(test_nmuber(25, 15)+"<br>");
+                document.write(test_nmuber(7, 8)+"<br>");
+                document.write(test_nmuber(25, 10)+"<br>");
+                document.write(test_nmuber(5, 9)+"<br>");
+                document.write(test_nmuber(7, 9)+"<br>");
+                document.write(test_nmuber(9, 25)+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    true
+    true
+    true
+    true
+    false
+    false
+    false
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+46. Write a JavaScript program to check two given non-negative integers that whether one of the number (not both) is multiple of 7 or 11.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to check two given non-negative integers that whether one of the number (not both) is multiple of 7 or 11.</title>
+            <script>
+                function valCheck (a, b) {
+                    if (!((a % 7 == 0 || a % 11 == 0) && (b % 7 == 0 || b % 11 == 0))) {
+                        return ((a % 7 == 0 || a % 11 == 0) || (b % 7 == 0 || b % 11 == 0));
+                    } else
+                        return false;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.write(valCheck(14, 21)+"<br>");
+                document.write(valCheck(14, 20)+"<br>");
+                document.write(valCheck(16, 20)+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    false
+    true
+    false
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+47. Write a JavaScript program to check whether a given number is presents in the range 40..10000.
+    For example 40 presents in 40 and 4000
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to check whether a given number is presents in the range 40..10000. </title>
+            <script>
+                function test_digit(x, y, n) {
+                    if (n < 40 || n > 10000)
+                      return false;
+                    else
+                      if (n >= x && n <= y)
+                        return true;
+                      else
+                        return false;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.write(test_digit(40, 4000, 45)+"<br>");
+                document.write(test_digit(80, 320, 79)+"<br>");
+                document.write(test_digit(89, 4000, 30)+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    true
+    false
+    false
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+48. Write a JavaScript program to reverse a given string.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to reverse a given string.</title>
+            <script>
+                function string_reverse(str) {
+                    return str.split("").reverse().join("");
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.write(string_reverse("w3resource")+"<br>");
+                document.write(string_reverse("www")+"<br>");
+                document.write(string_reverse("JavaScript")+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    ecruoser3w
+    www
+    tpircSavaJ
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+49. Write a JavaScript program to replace every character in a given string with the character following it in the alphabet.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to replace every character in a given string with the character following it in the alphabet.</title>
+                <script>
+                    function LetterChanges(text) {
+                        //https://goo.gl/R8gn7u
+                        var s = text.split('');
+                        for (var i = 0; i < s.length; i++) {
+                            // Caesar cipher
+                            switch(s[i]) {
+                                case ' ': break;
+                                case 'z': s[i] = 'a'; break;
+                                case 'Z': s[i] = 'A'; break;
+                                default:
+                                    s[i] = String.fromCharCode(1 + s[i].charCodeAt(0));
+                            }
+
+                            // Upper-case vowels
+                            switch(s[i]) {
+                                case 'a': case 'e': case 'i': case 'o': case 'u':
+                                    s[i] = s[i].toUpperCase();
+                            }
+                        }
+                        return s.join('');
+                    }
+                </script>
+        </head>
+        <body>
+            <script>
+                document.write(LetterChanges("PYTHON")+"<br>");
+                document.write(LetterChanges("W3R")+"<br>");
+                document.write(LetterChanges("php")+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    QZUIPO
+    X4S
+    qIq
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+50. Write a JavaScript program to capitalize the first letter of each word of a given string.
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>JavaScript program to capitalize the first letter of each word of a given string.</title>
+        <script>
+            function capital_letter(str) {
+                str = str.split(" ");
+
+                for (var i = 0, x = str.length; i < x; i++) {
+                    str[i] = str[i][0].toUpperCase() + str[i].substr(1);
+                }
+
+                return str.join(" ");
+            }
+        </script>
+    </head>
+    <body>
+        <script>
+            document.write(capital_letter("Write a JavaScript program to capitalize the first letter of each word of a given string."));
+        </script>
+    </body>
+    </html>
+
+    Sample Output:
+
+    Write A JavaScript Program To Capitalize The First Letter Of Each Word Of A Given String.
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+51. Write a JavaScript program to convert a given number to hours and minutes.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to convert a given number to hours and minutes.</title>
+            <script>
+                function time_convert(num) {
+                    var hours = Math.floor(num / 60);
+                    var minutes = num % 60;
+                    return hours + ":" + minutes;
+                }
+            </script>
+        </head>
+        <body>
+        <script>
+            document.write("71 = "+time_convert(71)+"<br>");
+            document.write("450 = "+time_convert(450)+"<br>");
+            document.write("1441 = "+time_convert(1441)+"<br>");
+        </script>
+        </body>
+    </html>
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+52. Write a JavaScript program to convert the letters of a given string in alphabetical order.
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>JavaScript program to convert the letters of a given string in alphabetical order.</title>
+        <script>
+            function alphabet_Soup(str) {
+                return str.split("").sort().join("");
+            }
+        </script>
+    </head>
+    <body>
+        <script>
+            document.writeln(alphabet_Soup("Python")+"<br>");
+            document.writeln(alphabet_Soup("Exercises")+"<br>");
+            document.writeln(alphabet_Soup("QuickBrownFoxJumpsOverTheLazyDog")+"<br>");
+        </script>
+    </body>
+    </html>
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+53. Write a JavaScript program to check whether the characters a and b are separated by exactly 3 places
+    anywhere (at least once) in a given string.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to check whether the characters a and b are separated by exactly 3 places anywhere (at least once) in a given string.</title>
+            <script>
+                function ab_Check(str) {
+                    return (/a...b/).test(str) || (/b...a/).test(str);
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(ab_Check("Chainsbreak")+"<br>");
+                document.writeln(ab_Check("pane borrowed")+"<br>");
+                document.writeln(ab_Check("abCheck")+"<br>");
+            </script>
+        </body>
+    </html>
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+54. Write a JavaScript program to count the number of vowels in a given string.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to count the number of vowels in a given string.</title>
+            <script>
+                function vowel_Count(str) {
+                    return str.replace(/[^aeiou]/g, "").length;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(vowel_Count("Python")+"<br>");
+                document.writeln(vowel_Count("w3resource.com")+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Result:
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+55. Write a JavaScript program to check whether a given string contains equal number of p's and t's.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to create a new string without the first and last character of a given string.</title>
+            <script>
+                function without_first_end(str) {
+                  return str.substring(1, str.length - 1);
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(without_first_end('JavaScript')+"<br>");
+                document.writeln(without_first_end('JS')+"<br>");
+                document.writeln(without_first_end('PHP')+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Result:
+    avaScrip
+    H
+----------------------------------------------------------------------------------------------------------------------------------------------------
+56. Write a JavaScript program to divide two positive numbers and return a string with properly formatted commas.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to divide two positive numbers and return a string with properly formatted commas.</title>
+        </head>
+        <body>
+            <script>
+                function division_string(n1, n2) {
+                    n1 = 80;
+                    n2 = 6;
+                    var div = Math.round(n1 / n2).toString();
+                    result_array = div.split("");
+
+                    if (div >= 1000) {
+                        for (var i = div.length-3; i>0; i-=3) {
+                            result_array.splice(i, 0, ",");
+                        }
+                        result_array;
+                    }
+                    document.writeln(result_array);
+                }
+            </script>
+        </body>
+    </html>
+----------------------------------------------------------------------------------------------------------------------------------------------------
+57. Write a JavaScript program to create a new string of specified copies (positive number) of a given string.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to create a new string of specified copies of a given string.</title>
+            <script>
+                function string_copies (str, n) {
+                    if (n < 0)
+                        return false;
+                    else
+                        return str.repeat(n);
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(string_copies("abc", 5)+"<br>");
+                document.writeln(string_copies("abc", 0)+"<br>");
+                document.writeln(string_copies("abc", -2)+"<br>");
+            </script>
+        </body>
+    </html>
+----------------------------------------------------------------------------------------------------------------------------------------------------
+58. Write a JavaScript program to create a new string of 4 copies of the last 3 characters of a given original
+    string. The length of the given string must be 3 and above.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to create a new string of 4 copies of the last 3 characters of a given original string. The length of the given string must be 3 and above.</title>
+            <script>
+                function newstring(str) {
+                    if (str.length >= 3) {
+                        result_str = str.substring(str.length - 3);
+                        return result_str + result_str + result_str + result_str;
+                    } else {
+                        return false;
+                    }
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(newstring("Python 3.0"));
+                document.writeln(newstring("JS"));
+                document.writeln(newstring("JavaScript"));
+            </script>
+        </body>
+    </html>
+----------------------------------------------------------------------------------------------------------------------------------------------------
+59. Write a JavaScript program to extract the first half of a string of even length.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to  extract the first half of a string of even length.</title>
+            <script>
+                function first_half (str) {
+                    if (str.length % 2 == 0) {
+                        return str.slice(0, str.length / 2);
+                    }
+                    return str;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(first_half("Python")+"<br>");
+                document.writeln(first_half("JavaScript")+"<br>");
+                document.writeln(first_half("PHP")+"<br>");
+            </script>
+        </body>
+    </html>
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+60. Write a JavaScript program to create a new string without the first and last character of a given string.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to create a new string without the first and last character of a given string.</title>
+            <script>
+                function without_first_end(str) {
+                    return str.substring(1, str.length - 1);
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(without_first_end('JavaScript')+"<br>");
+                document.writeln(without_first_end('JS')+"<br>");
+                document.writeln(without_first_end('PHP')+"<br>");
+            </script>
+        </body>
+    </html>
+
+
+    Sample Output:
+
+    avaScrip
+
+    H
+----------------------------------------------------------------------------------------------------------------------------------------------------
+61. Write a JavaScript program to concatenate two strings except their first character.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to concatenate two strings except their first character.</title>
+            <script>
+                function concatenate(str1, str2) {
+                    str1 = str1.substring(1, str1.length);
+                    str2 = str2.substring(1, str2.length);
+                    return str1 + str2;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(concatenate("PHP","JS")+"<br>");
+                document.writeln(concatenate("A","B")+"<br>");
+                document.writeln(concatenate("AA","BB")+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    HPS
+
+    AB
+----------------------------------------------------------------------------------------------------------------------------------------------------
+62. Write a JavaScript program to move last three character to the start of a given string. The string length
+    must be greater or equal to three.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to move last three character to the start of a given string. The string length must be 3.</title>
+            <script>
+                function right_three(str) {
+                    if (str.length > 1) {
+                        return str.slice(-3) + str.slice(0, -3);
+                    }
+                    return str;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(right_three("Python")+"<br>");
+                document.writeln(right_three("JavaScript")+"<br>");
+                document.writeln(right_three("Hi")+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    honPyt
+    iptJavaScr
+    Hi
+----------------------------------------------------------------------------------------------------------------------------------------------------
+63. Write a JavaScript program to create a string using the middle three characters of a given string of odd
+    length. The string length must be greater or equal to three.
+
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to create a string using the middle three characters of a given string of odd length. The string length must be 3.</title>
+            <script>
+                function middle_three(str) {
+                    if (str.length % 2!= 0) {
+                        mid = (str.length + 1)/2;
+                        return str.slice(mid - 2, mid + 1);
+                    }
+                    return str;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(middle_three('abcdefg')+"<br>");
+                document.writeln(middle_three('HTML5')+"<br>");
+                document.writeln(middle_three('Python')+"<br>");
+                document.writeln(middle_three('PHP')+"<br>");
+                document.writeln(middle_three('Exercises')+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    cde
+    TML
+    Python
+    PHP
+    rci
+----------------------------------------------------------------------------------------------------------------------------------------------------
+64. Write a JavaScript program to concatenate two strings and return the result. If the length of the strings
+    are not same then remove the characters from the longer string.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to concatenate two strings and return the result. If the length of the strings are not same then remove the characters from the longer string.</title>
+            <script>
+                function str_con_cat(str1, str2) {
+                    const m = Math.min(str1.length, str2.length);
+                    return str1.substring(str1.length - m) + str2.substring(str2.length - m);
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(str_con_cat("Python", "JS")+"<br>");
+                document.writeln(str_con_cat("ab", "cdef")+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    onJS
+    abef
+----------------------------------------------------------------------------------------------------------------------------------------------------
+65. Write a JavaScript program to test whether a string end with "Script". The string length must be greater
+    or equal to 6.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to test whether a string end with “Script”.  The string length must be greater or equal to 6.</title>
+            <script>
+                function end_script(str) {
+                    if (str.substring(str.length - 6, str.length) == 'Script') {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(end_script("JavaScript")+"<br>");
+                document.writeln(end_script("Java Script")+"<br>");
+                document.writeln(end_script("Java Scripts")+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    true
+    true
+    false
+----------------------------------------------------------------------------------------------------------------------------------------------------
+66. Write a JavaScript program to display the city name if the string begins with "Los" or "New" otherwise
+    return blank.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to display the city name  if the string begins with “Los” or “New” otherwise return blank.</title>
+            <script>
+                function city_name(str) {
+                    if (str.length >= 3 && ((str.substring(0, 3) == 'Los') || (str.substring(0, 3) == 'New'))) {
+                        return str;
+                    }
+                    return '';
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(city_name("New York")+"<br>");
+                document.writeln(city_name("Los Angeles")+"<br>");
+                document.writeln(city_name("London")+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    New York
+    Los Angeles
+----------------------------------------------------------------------------------------------------------------------------------------------------
+67. Write a JavaScript program to create a new string from a given string, removing the first and last characters
+    of the string if the first or last character are 'P'. Return the original string if the condition is not satisfied.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to create a new string from a given string, removing the first and last characters of the string if the first or  last character are 'P'</title>
+            <script>
+                function nop(str) {
+                    let start_pos = 0;
+                    let end_pos = str.length;
+
+                    if(str.length > 0 && str.charAt(0) == 'P') {
+                        start_pos = 1;
+                    }
+
+                    if(str.length > 1 && str.charAt(str.length - 1) == 'P') {
+                        end_pos--;
+                    }
+
+                    return str.substring(start_pos, end_pos);
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(nop("PythonP")+"<br>");
+                document.writeln(nop("Python")+"<br>");
+                document.writeln(nop("JavaScript")+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    ython
+    ython
+    JavaScript
+----------------------------------------------------------------------------------------------------------------------------------------------------
+68. Write a JavaScript program to create a new string using the first and last n characters from a given sting.
+    The string length must be greater or equal to n.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to create a new string using the first and last n characters from a given string. The string length must be greater or equal to n.</title>
+            <script>
+                function two_string(str, n) {
+                    first_part = str.substring(0, n);
+                    last_part = str.substring(str.length - n);
+                    return first_part + last_part;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(two_string("JavaScript", 2)+"<br>");
+                document.writeln(two_string("JavaScript", 3)+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    Japt
+    Javipt
+----------------------------------------------------------------------------------------------------------------------------------------------------
+69. Write a JavaScript program to compute the sum of three elements of a given array of integers of length 3.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to compute the sum of three elements of an given integers of length 3.</title>
+            <script>
+                function sum_three(nums) {
+                    return nums[0] + nums[1] + nums[2];
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(sum_three([10, 32, 20])+"<br>");
+                document.writeln(sum_three([5, 7, 9])+"<br>");
+                document.writeln(sum_three([0, 8, -11])+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    62
+    21
+    -3
+----------------------------------------------------------------------------------------------------------------------------------------------------
+70. Write a JavaScript program to rotate the elements left of a given array of integers of length 3.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to rotate the elements left of a given array of integers of length 3.</title>
+            <script>
+                function rotate_elements_left(array) {
+                    return [array[1], array[2], array[0]];
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(rotate_elements_left([3, 4, 5])+"<br>");
+                document.writeln(rotate_elements_left([0, -1, 2])+"<br>");
+                document.writeln(rotate_elements_left([7, 6, 5])+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    [4,5,3]
+    [-1,2,0]
+    [6,5,7]
+----------------------------------------------------------------------------------------------------------------------------------------------------
+71. Write a JavaScript program to check whether 1 appears in first or last position of a given array of integers.
+    The array length must be greater or equal to 1.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to check whether 1 appears in first or last position of a given array of integers. The array length must be greater or equal to 1.</title>
+            <script>
+                function first_last_1(nums) {
+                    var end_pos = nums.length - 1;
+                    return nums[0] == 1 || nums[end_pos] == 1;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(first_last_1([1, 3, 5])+"<br>");
+                document.writeln(first_last_1([1, 3, 5, 1])+"<br>");
+                document.writeln(first_last_1([2, 4, 6])+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    true
+    true
+    false
+----------------------------------------------------------------------------------------------------------------------------------------------------
+72. Write a JavaScript program to check whether the first and last elements are equal of a given array of integers
+    length 3.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to check whether the first and last elements are equal of a given array of integers length 3</title>
+            <script>
+                function first_last_same(nums) {
+                    var end = nums.length - 1;
+                    if (nums.length >= 1){
+                       return nums[0] == nums[end];
+                    } else {return false;}
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(first_last_same([10, 20, 30])+"<br>");
+                document.writeln(first_last_same([10, 20, 30, 10])+"<br>");
+                document.writeln(first_last_same([20, 20, 20])+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    false
+    true
+    true
+----------------------------------------------------------------------------------------------------------------------------------------------------
+73. Write a JavaScript program to reverse the elements of a given array of integers length 3.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to reverse the elements of a given array of integers length 3.</title>
+            <script>
+                function reverse3(array) {
+                    return array.map((element, idx, arr) => arr[(arr.length - 1) - idx]);
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(reverse3([5, 4, 3])+"<br>");
+                document.writeln(reverse3([1, 0, -1])+"<br>");
+                document.writeln(reverse3([2, 3, 1])+"<br>");
+            </script>
+        </body>
+    </html>
+
+Sample Output:
+
+[3,4,5]
+[-1,0,1]
+[1,3,2]
+----------------------------------------------------------------------------------------------------------------------------------------------------
+74. Write a JavaScript program to find the larger value between the first or last and set all the other elements
+    with that value. Display the new array.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to find the larger value between the first or last and set all the other elements with that value.  Display the new array.</title>
+            <script>
+                function all_max(nums) {
+                    var max_val = nums[0] > nums[2] ? nums[0] : nums[2];
+
+                    nums[0] = max_val;
+                    nums[1] = max_val;
+                    nums[2] = max_val;
+
+                    return nums;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(all_max([20, 30, 40])+"<br>");
+                document.writeln(all_max([-7, -9, 0])+"<br>");
+                document.writeln(all_max([12, 10, 3])+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    [40,40,40]
+    [0,0,0]
+    [12,12,12]
+----------------------------------------------------------------------------------------------------------------------------------------------------
+75. Write a JavaScript program to create a new array taking the middle elements of the two arrays of integer and
+    each length 3.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to create a new array taking the middle elements of the two arrays of integer and each length 3.</title>
+            <script>
+                function middle_elements(a, b) {
+                    var new_array = [];
+                    new_array.push(a[1], b[1]);
+                    return new_array;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(middle_elements([1, 2, 3], [1, 5, 6])+"<br>");
+                document.writeln(middle_elements([3, 3, 3], [2, 8, 0])+"<br>");
+                document.writeln(middle_elements([4, 2, 7], [2, 4, 5])+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    [2,5]
+    [3,8]
+    [2,4]
+----------------------------------------------------------------------------------------------------------------------------------------------------
+76. Write a JavaScript program to create a new array taking the first and last elements from a given array of
+    integers and length must be greater or equal to 1.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to create a new array taking the first and last elements from a given array of integers and length must be greater or equal to 1.</title>
+            <script>
+                function started(nums) {
+                    var array1 = [];
+                    array1.push(nums[0], nums[nums.length - 1]);
+                    return array1;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(started([20, 20, 30])+"<br>");
+                document.writeln(started([5, 2, 7, 8])+"<br>");
+                document.writeln(started([17, 12, 34, 78])+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    [20,30]
+    [5,8]
+    [17,78]
+----------------------------------------------------------------------------------------------------------------------------------------------------
+77. Write a JavaScript program to test whether an array of integers of length 2 contains 1 or a 3.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to test whether an array of integers of length 2 contains 1 or a 3.</title>
+            <script>
+                function contins13(nums) {
+                    if (nums.indexOf(1) != -1 || nums.indexOf(3) != -1){
+                       return true
+                    } else {
+                       return false
+                    }
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(contins13([1, 5])+"<br>");
+                document.writeln(contins13([2, 3])+"<br>");
+                document.writeln(contins13([7, 5])+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    true
+    true
+    false
+----------------------------------------------------------------------------------------------------------------------------------------------------
+78. Write a JavaScript program to test whether an array of integers of length 2 does not contain 1 or a 3.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to test whether an array of integers of length 2 does not contain 1 or a 3.</title>
+            <script>
+                function is13(nums) {
+                    if (nums.indexOf(1) == -1 && nums.indexOf(3) == -1){
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(is13([7, 8])+"<br>");
+                document.writeln(is13([3, 2])+"<br>");
+                document.writeln(is13([0, 1])+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    true
+    false
+    false
+----------------------------------------------------------------------------------------------------------------------------------------------------
+79. Write a JavaScript program to test whether a given array of integers contains 30 and 40 twice. The array
+    length should be 0, 1, or 2.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to test whether a given array of integers contains 30 or 40 twice. The array length should be 0, 1, or 2.</title>
+            <script>
+                function twice3040(arra1) {
+                    let a = arra1[0], b = arra1[1];
+                    return (a === 30 && b === 30) || (a === 40 && b === 40);
+                }
+            </script>
+        </head>
+        <body>
+            document.writeln(twice3040([30, 30])+"<br>");
+            document.writeln(twice3040([40, 40])+"<br>");
+            document.writeln(twice3040([20, 20])+"<br>");
+            document.writeln(twice3040([30])+"<br>");
+        </body>
+    </html>
+
+    Sample Output:
+
+    true
+    true
+    false
+    true
+----------------------------------------------------------------------------------------------------------------------------------------------------
+80. Write a JavaScript program to swap the first and last elements of a given array of integers. The array length
+    should be at least 1.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to swap the first and last elements of a given array of integers. The array length should be  at least 1.</title>
+            <script>
+                function swap(arra) {
+                    [arra[0], arra[arra.length - 1]] = [arra[arra.length - 1], arra[0]];
+                    return arra;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(swap([1, 2, 3, 4])+"<br>");
+                document.writeln(swap([0, 2, 1])+"<br>");
+                document.writeln(swap([3])+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    [4,2,3,1]
+    [1,2,0]
+    [3]
+----------------------------------------------------------------------------------------------------------------------------------------------------
+81. Write a JavaScript program to add two digits of a given positive integer of length two.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to add two digits of a given positive integer of length two.</title>
+            <script>
+                function add_two_digits(n) {
+                    return n % 10 + Math.floor(n / 10);
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(add_two_digits(25)+"<br>");
+                document.writeln(add_two_digits(50)+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    7
+    5
+----------------------------------------------------------------------------------------------------------------------------------------------------
+82. Write a JavaScript to add two positive integers without carry.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript to add two positive integers without carry</title>
+            <script>
+                function add_two_int_without_carrying(n1, n2) {
+                    var result = 0,
+                        x = 1;
+                    while (n1 > 0 && n2 > 0) {
+                        result += x * ((n1 + n2) % 10);
+                        n1 = Math.floor(n1 / 10);
+                        n2 = Math.floor(n2 / 10);
+                        x*= 10;
+                    }
+                    return result;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(add_two_int_without_carrying(222, 911)+"<br>");
+                document.writeln(add_two_int_without_carrying(200, 900)+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    133
+    100
+----------------------------------------------------------------------------------------------------------------------------------------------------
+83. Write a JavaScript to find the longest string from a given array of strings.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript to find the longest string from an given array of strings</title>
+            <script>
+                function longest_string(str_ara) {
+                    var max = str_ara[0].length;
+                    str_ara.map(v => max = Math.max(max, v.length));
+                    result = str_ara.filter(v => v.length == max);
+                    return result;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(longest_string(['a', 'aa', 'aaa', 'aaaaa','aaaa'])+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    ["aaaaa"]
+----------------------------------------------------------------------------------------------------------------------------------------------------
+84. Write a JavaScript to replace each character of a given string by the next one in the English alphabet.
+    Note: 'a' will be replace by 'b' or 'z' would be replaced by 'a'.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>Write a JavaScript to replace each character of a given string by the next one in the English alphabet</title>
+            <script>
+                function alphabet_char_Shift(str) {
+                    var all_chars = str.split("");
+                    for(var i = 0; i < all_chars.length; i++) {
+                        var n = all_chars[i].charCodeAt() - 'a'.charCodeAt();
+                        n = (n + 1) % 26;
+                        all_chars[i] = String.fromCharCode(n + 'a'.charCodeAt());
+                    }
+                    return all_chars.join("");
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(alphabet_char_Shift("abcdxyz")+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    bcdeyza
+----------------------------------------------------------------------------------------------------------------------------------------------------
+85. Write a JavaScript code to divide a given array of positive integers into two parts. First element goes to
+    first part, second element goes to second part, and third element goes to first part and so on. Now compute
+    the sum of two parts and store into an array of size two.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>Compute the sum of two parts and store into an array of size two</title>
+            <script>
+                function alternate_Sums(arr) {
+                    var result = [0, 0];
+                    for(var i = 0; i < arr.length; i++) {
+                        if(i % 2)
+                            result[1] += arr[i];
+                        else
+                            result[0] += arr[i];
+                    }
+                    return result;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(alternate_Sums([1, 3, 6, 2, 5, 10])+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    [12,15]
+----------------------------------------------------------------------------------------------------------------------------------------------------
+86. Write a JavaScript program to find the types of a given angle.
+    Types of angles:
+    Acute angle: An angle between 0 and 90 degrees.
+    Right angle: An 90 degree angle.
+    Obtuse angle: An angle between 90 and 180 degrees.
+    Straight angle: A 180 degree angle.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>Find the types of a specified array</title>
+            <script>
+                function angle_Type(angle) {
+                    if(angle < 90) {
+                        return "Acute angle.";
+                    }
+                    if(angle === 90) {
+                        return "Right angle.";
+                    }
+                    if(angle < 180) {
+                        return "Obtuse angle.";
+                    }
+                    return "Straight angle.";
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(angle_Type(47)+"<br>");
+                document.writeln(angle_Type(90)+"<br>");
+                document.writeln(angle_Type(145)+"<br>");
+                document.writeln(angle_Type(180)+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    Acute angle.
+    Right angle.
+    Obtuse angle.
+    Straight angle.
+----------------------------------------------------------------------------------------------------------------------------------------------------
+87. Write a JavaScript program to check whether two arrays of integers of same length are similar or not.
+    The arrays will be similar if one array can be obtained from another array by swapping at most one pair
+    of elements.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>Write a JavaScript program to check whether two arrays of integers of same length are similar or not. The arrays will be similar if one array can be obtained from another array by swapping at most one pair of elements</title>
+            <script>
+                function array_checking(arra1, arra2) {
+                    for(var i = 0; i < arra1.length; i++) {
+                        for(var j = i; j < arra1.length; j++) {
+                            var result = true,
+                            temp = arra1[i];
+                            arra1[i] = arra1[j];
+                            arra1[j] = temp;
+                            for(var k = 0; k < arra1.length; k++) {
+                                if(arra1[k] !== arra2[k]) {
+                                    result = false;
+                                    break;
+                                }
+                            }
+                            if(result) {
+                                return true;
+                            }
+                            arra1[j] = arra1[i];
+                            arra1[i] = temp;
+                        }
+                    }
+                    return false;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(array_checking([10,20,30], [10,20,30])+"<br>");
+                document.writeln(array_checking([10,20,30], [30,10,20])+"<br>");
+                document.writeln(array_checking([10,20,30,40], [10,30,20,40])+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    true
+    false
+    true
+----------------------------------------------------------------------------------------------------------------------------------------------------
+88. Write a JavaScript program to check whether two given integers are similar or not, if a given divisor
+    divides both integers and it does not divide either.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>Check whether two given integers are similar or not</title>
+            <script>
+                function checking_numbers(x, y, divisor) {
+                    if(x % divisor === 0 && y % divisor === 0 || x % divisor !== 0 && y % divisor !== 0) {
+                        return true;
+                    }
+                    return false;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(checking_numbers(10, 25, 5)+"<br>");
+                document.writeln(checking_numbers(10, 20, 5)+"<br>");
+                document.writeln(checking_numbers(10, 20, 4)+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    true
+    true
+    false
+----------------------------------------------------------------------------------------------------------------------------------------------------
+89. Write a JavaScript program to check whether it is possible to replace $ in a given expression x $ y = z with
+    one of the four signs +, -, * or / to obtain a correct expression.
+    For example x = 10, y = 30 and z = 300, we can replace $ with a multiple operator (*) to obtain x * y = z
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>Check whether it is possible to replace $ in a specified expression</title>
+            <script>
+                function check_arithmetic_Expression(x, y, z) {
+                    return x + y == z || x * y == z || x / y == z || x - y == z;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(check_arithmetic_Expression(10, 25, 35)+"<br>");
+                document.writeln(check_arithmetic_Expression(10, 25, 250)+"<br>");
+                document.writeln(check_arithmetic_Expression(30, 25, 5)+"<br>");
+                document.writeln(check_arithmetic_Expression(100, 25, 4.0)+"<br>");
+                document.writeln(check_arithmetic_Expression(100, 25, 25)+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    true
+    true
+    true
+    true
+    false
+----------------------------------------------------------------------------------------------------------------------------------------------------
+90. Write a JavaScript program to find the kth greatest element of a given array of integers
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>Find the kth greatest element of a given array of integers.</title>
+            <script>
+                function Kth_greatest_in_array(arr, k) {
+                    for (var i = 0; i < k; i++) {
+                        var max_index = i, tmp = arr[i];
+                        for (var j = i + 1; j < arr.length; j++) {
+                            if (arr[j] > arr[max_index]) {
+                                max_index = j;
+                            }
+                        }
+
+                        arr[i] = arr[max_index];
+                        arr[max_index] = tmp;
+                    }
+                    return arr[k - 1];
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(Kth_greatest_in_array([1,2,6,4,5], 3)+"<br>");
+                document.writeln(Kth_greatest_in_array([-10,-25,-47,-36,0], 1)+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    4
+    0
+----------------------------------------------------------------------------------------------------------------------------------------------------
+91. Write a JavaScript program to find the maximum possible sum of some of its k consecutive numbers (numbers
+    that follow each other in order.) of a given array of positive integers.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>Find the maximum possible sum of some of its k consecutive numbers of a specified array of positive integers.</title>
+            <script>
+                function array_max_consecutive_sum(nums, k) {
+                    let result = 0;
+                    let temp_sum = 0;
+                    for (var i = 0; i < k - 1; i++) {
+                        temp_sum += nums[i];
+                    }
+                    for (var i = k - 1; i < nums.length; i++) {
+                        temp_sum += nums[i];
+                        if (temp_sum > result) {
+                            result = temp_sum;
+                        }
+                        temp_sum -= nums[i - k + 1];
+                    }
+                    return result;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(array_max_consecutive_sum([1, 2, 3, 14, 5], 2)+"<br>");
+                document.writeln(array_max_consecutive_sum([2, 3, 5, 1, 6], 3)+"<br>");
+                document.writeln(array_max_consecutive_sum([9, 3, 5, 1, 7], 2)+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    19
+    12
+    12
+----------------------------------------------------------------------------------------------------------------------------------------------------
+92. Write a JavaScript program to find the maximal difference between any two adjacent elements of a given
+    array of integers.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>Find the maximum difference between any two adjacent elements of a given array of integers.</title>
+            <script>
+                function max_difference(arr) {
+                    var max = -1;
+                    var temp;
+                    for (var i = 0; i < arr.length - 1; i++) {
+                        temp = Math.abs(arr[i] - arr[i + 1]);
+                        max = Math.max(max, temp);
+                    }
+                    return max;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(max_difference([1, 2, 3, 8, 9])+"<br>");
+                document.writeln(max_difference([1, 2, 3, 18, 9])+"<br>");
+                document.writeln(max_difference([13, 2, 3, 8, 9])+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    5
+    15
+    11
+----------------------------------------------------------------------------------------------------------------------------------------------------
+93. Write a JavaScript program to find the maximal difference among all possible pairs of a given array of integers.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>Find the maximum difference among all possible pairs of a given array of integers.</title>
+            <script>
+                function array_max_diff(arr) {
+                    var max_result = 0;
+                    for(var i=0;i<arr.length;i++) {
+                        for(var k=0; k!=i && k<arr.length; k++) {
+                            var diff = Math.abs(arr[i]-arr[k]);
+                            max_result = Math.max(max_result, diff);
+                        }
+                    }
+                    return max_result;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(array_max_diff([1, 2, 3, 8, 9])+"<br>");
+                document.writeln(array_max_diff([1, 2, 3, 18, 9])+"<br>");
+                document.writeln(array_max_diff([13, 2, 3, 8, 9])+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    8
+    17
+    11
+----------------------------------------------------------------------------------------------------------------------------------------------------
+94. Write a JavaScript program to find the number which appears most in a given array of integers.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>Find the number which appears most in a given array of integers</title>
+            <script>
+                function array_element_mode(arr) {
+                    var ctr = [], ans = 0;
+
+                    for(var i = 0; i < 10; i++) {
+                        ctr.push(0);
+                    }
+                    for(var i = 0; i < arr.length; i++) {
+                        ctr[arr[i] - 1]++;
+                        if(ctr[arr[i] - 1] > ctr[ans]) {
+                            ans = arr[i] - 1;
+                        }
+                    }
+                    return ans + 1;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(array_element_mode([1, 2, 3, 2, 2, 8, 1, 9])+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    2
+----------------------------------------------------------------------------------------------------------------------------------------------------
+95. Write a JavaScript program to replace all the numbers with a specified number of a given array of integers.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>Replace all the numbers with a specified number of a given array of integers</title>
+            <script>
+                function array_element_replace(arr, old_value, new_value) {
+                    for (var i = 0; i < arr.length; i++) {
+                        if (arr[i] === old_value) {
+                            arr[i] = new_value;
+                        }
+                    }
+                    return arr;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                num = [1, 2, 3, 2, 2, 8, 1, 9];
+                document.writeln("Original Array: "+num+"<br>");
+                document.writeln(array_element_replace(num, 2, 5)+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    Original Array: 1,2,3,2,2,8,1,9
+    1,5,3,5,5,8,1,9
+----------------------------------------------------------------------------------------------------------------------------------------------------
+96. Write a JavaScript program to compute the sum of absolute differences of consecutive numbers of a given array
+    of integers.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title> Compute the sum of absolute differences of consecutive numbers of a given array of integers</title>
+            <script>
+                function sum_adjacent_difference(arr) {
+                    var result = 0;
+                    for (var i = 1; i < arr.length; i++) {
+                        result += Math.abs(arr[i] - arr[i - 1]);
+                    }
+                    return result;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(sum_adjacent_difference([1, 2, 3, 2, -5])+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    10
+----------------------------------------------------------------------------------------------------------------------------------------------------
+97. Write a JavaScript program to find the shortest possible string which can create a string to make it a palindrome by adding characters to the end of it.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title> Find the shortest possible string which can create a string to make it a palindrome by adding characters to the end of it</title>
+            <script>
+                function build_Palindrome(new_str) {
+                    var flag;
+                    for (var i = new_str.length;; i++) {
+                        flag = true;
+                        for (var j = 0; j < i - j - 1; j++) {
+                            if (i - j - 1 < new_str.length && new_str[j] != new_str[i - j - 1]) {
+                                flag = false;
+                                break;
+                            }
+                        }
+                        if (flag) {
+                            for (var j = new_str.length; j < i; j++) {
+                                new_str += new_str[i - j - 1];
+                            }
+                            return new_str;
+                        }
+                    }
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(build_Palindrome("abcddc")+"<br>");
+                document.writeln(build_Palindrome("122")+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    abcddcba
+    1221
+----------------------------------------------------------------------------------------------------------------------------------------------------
+98. Write a JavaScript program to switch case of the minimum possible number of letters to make a given string written in the upper case or in the lower case.
+    Fox example "Write" will be write and "PHp" will be "PHP"
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>Switch case of the minimum possible number of letters to make a given string written in the upper case or in the lower case</title>
+            <script>
+                function change_case(new_str) {
+                    var x = 0;
+                    var y = 0;
+
+                    for (var i = 0; i < new_str.length; i++) {
+                        if (/[A-Z]/.test(new_str[i])) {
+                              x++;
+                        } else y++;
+                    }
+
+                    if (y > x) return new_str.toLowerCase();
+                    return new_str.toUpperCase();
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(change_case("Write")+"<br>");
+                document.writeln(change_case("PHp")+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    write
+    PHP
+----------------------------------------------------------------------------------------------------------------------------------------------------
+99. Write a JavaScript program to check whether it is possible to rearrange characters of a given
+    string in such way that it will become equal to another given string.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title> Rearrange characters of a given string in such way that it will become equal to another given string</title>
+            <script>
+                function rearrangement_characters(str1, str2) {
+                    var first_set = str1.split(''),
+                        second_set = str2.split(''),
+                        result = true;
+
+                    first_set.sort();
+                    second_set.sort();
+
+                    for (var i = 0; i < Math.max(first_set.length, second_set.length); i++) {
+                        if (first_set[i] !== second_set[i]) {
+                            result = false;
+                        }
+                    }
+                    return result;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(rearrangement_characters("xyz", "zyx")+"<br>");
+                document.writeln(rearrangement_characters("xyz", "zyp")+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    true
+    false
+----------------------------------------------------------------------------------------------------------------------------------------------------
+100.Write a JavaScript program to check whether there is at least one element which occurs in two
+    given sorted arrays of integers.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title> Check whether there is at least one element which occurs in two given sorted arrays of integers</title>
+            <script>
+                function check_common_element(arra1, arra2) {
+                    for (var i = 0; i < arra1.length; i++) {
+                        if (arra2.indexOf(arra1[i]) != -1)
+                            return true;
+                    }
+                    return false;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(check_common_element([1,2,3], [3,4,5])+"<br>");
+                document.writeln(check_common_element([1,2,3], [5,6,7])+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    true
+    false
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+101. Write a JavaScript program to check whether a given string contains only Latin letters and
+     no two uppercase and no two lowercase letters are in adjacent positions.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>Check whether a given string contains only Latin letters and no two uppercase and no two lowercase letters are in adjacent positions</title>
+             <script>
+                function test_string(input_str) {
+                    var is_lower_case = function(symbol) {
+                        if ('a' <= symbol && symbol <= 'z') {
+                            return true;
+                        }
+                        return false;
+                    }
+
+                    var is_upper_case = function(symbol) {
+                        if ('A' <= symbol && symbol <= 'Z') {
+                            return true;
+                        }
+                        return false;
+                    }
+
+                    var is_first_char_lower = is_lower_case(input_str[0]), is_first_char_upper = is_upper_case(input_str[0]);
+
+                    if (!(is_first_char_lower || is_first_char_upper)) {
+                        return false;
+                    }
+
+                    for (var i = 1; i < input_str.length; i++) {
+                        if (i % 2) {
+                            if (is_lower_case(input_str[i]) === is_first_char_lower ||
+                                is_upper_case(input_str[i]) === is_first_char_upper) {
+                                return false;
+                            }
+                        } else {
+                            if (is_lower_case(input_str[i]) !== is_first_char_lower ||
+                                is_upper_case(input_str[i]) !== is_first_char_upper) {
+                                return false;
+                            }
+                        }
+                    }
+
+                    return true;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(test_string('xYr')+"<br>");
+                document.writeln(test_string('XXyx')+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    true
+    false
+----------------------------------------------------------------------------------------------------------------------------------------------------
+102. Write a JavaScript program to find the number of inversions of a given array of integers.
+     Note: Two elements of the array a stored at positions i and j form an inversion if a[i] > a[j] and i < j.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title> Find the number of inversions of a specified array of integers</title>
+            <script>
+                function number_of_InversionsNaive(arr) {
+                    var ctr = 0;
+                    for (var i = 0; i < arr.length; i++) {
+                        for (var j = i + 1; j < arr.length; j++) {
+                            if (arr[i] > arr[j])
+                                ctr++;
+                        }
+                    }
+                    return ctr;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(number_of_InversionsNaive([0, 3, 2, 5, 9])+"<br>");
+                document.writeln(number_of_InversionsNaive([1, 5, 4, 3])+"<br>");
+                document.writeln(number_of_InversionsNaive([10, 30, 20, -10])+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    1
+    3
+    4
+----------------------------------------------------------------------------------------------------------------------------------------------------
+103. Write a JavaScript program to find the maximal number from a given positive integer by
+     deleting exactly one digit of the given number.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title> Find the maximum number from a given positive integer by deleting exactly one digit of the given number</title>
+            <script>
+                function digit_delete(num) {
+                    var result = 0, num_digits = [];
+                    while (num) {
+                        num_digits.push(num % 10);
+                        num = Math.floor(num / 10);
+                    }
+                    for (var index_num = 0; index_num < num_digits.length; index_num++) {
+                        var n = 0;
+                        for (var i = num_digits.length - 1; i >= 0; i--) {
+                            if (i !== index_num) {
+                                n = n * 10 + num_digits[i];
+                            }
+                        }
+                        result = Math.max(n, result);
+                    }
+                    return result;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(digit_delete(100)+"<br>");
+                document.writeln(digit_delete(10)+"<br>");
+                document.writeln(digit_delete(1245)+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    10
+    1
+    245
+----------------------------------------------------------------------------------------------------------------------------------------------------
+104. Write a JavaScript program to find two elements of the array such that their absolute
+     difference is not greater than a given integer but is as close to the said integer.
+    <!DOCTYPE html>
+    <html>
+        <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width">
+          <title> Find two elements of the array such that their absolute difference is not greater than a given integer but is as close to the said integer</title>
+        <script>
+        function different_values(ara, n) {
+            var max_val = -1;
+            for (var i = 0; i < ara.length; i++) {
+                for (var j = i + 1; j < ara.length; j++) {
+                    var x = Math.abs(ara[i] - ara[j]);
+                    if (x <= n) {
+                        max_val = Math.max(max_val, x)
+                    }
+                }
+            }
+            return max_val
+        }
+        </script>
+        </head>
+        <body>
+            <script>
+        document.writeln(different_values([12, 10, 33, 34], 10)+"<br>");
+        document.writeln(different_values([12, 10, 33, 34], 24)+"<br>");
+        document.writeln(different_values([12, 10, 33, 44], 40)+"<br>");
+        </script>
+
+        </body>
+    </html>
+
+    Sample Output:
+
+    2
+    24
+    34
+----------------------------------------------------------------------------------------------------------------------------------------------------
+105. Write a JavaScript program to find the number of times to replace a given number with the sum of its digits until it convert to a single digit number.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title> Find the number of times to replace a given number with the sum of its digits until it convert to a single digit number</title>
+            <script>
+                function digit_to_one(num) {
+                    var digitSum = function(num) {
+                        var digit_sum = 0;
+                        while (num) {
+                            digit_sum += num % 10;
+                            num = Math.floor(num / 10);
+                        }
+                        return digit_sum;
+                    };
+
+                    var result = 0;
+
+                    while (num >= 10) {
+                        result += 1;
+                        num = digitSum(num);
+                    }
+
+                    return result;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(digit_to_one(123)+"<br>");
+                document.writeln(digit_to_one(156)+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    1
+    2
+----------------------------------------------------------------------------------------------------------------------------------------------------
+106. Write a JavaScript program to divide an integer by another integer as long as the result
+     is an integer and return the result.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title> Divide an integer by another integer as long as the result is an integer and return the result</title>
+            <script>
+                function divide_digit(num, d) {
+                    if (d==1) return num;
+                    else {
+                        while (num % d === 0) {
+                            num /= d;
+                        }
+                        return num;
+                    }
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(divide_digit(-12, 2)+"<br>");
+                document.writeln(divide_digit(13, 2)+"<br>");
+                document.writeln(divide_digit(13, 1)+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    -3
+    13
+    13
+----------------------------------------------------------------------------------------------------------------------------------------------------
+107. Write a JavaScript program to find the number of sorted pairs formed by its elements of a
+     given array of integers such that one element in the pair is divisible by the other one.
+     For example - The output of [1, 3, 2] ->2 - (1,3), (1,2).
+     The output of [2, 4, 6] -> 2 - (2,4), (2,6)
+     The output of [2, 4, 16] -> 3 - (2,4), (2,16), (4,16)
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title> Find the number of sorted pairs formed by its elements of a given array of integers such that one element in the pair is divisible by the other on</title>
+            <script>
+                function arr_pairs(arr) {
+                    var result = 0;
+                    for (var i = 0; i < arr.length; i++) {
+                        for (var j = i + 1; j < arr.length; j++) {
+                            if (arr[i] % arr[j] === 0 || arr[j] % arr[i] === 0) {
+                                result++;
+                            }
+                        }
+                    }
+                    return result;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(arr_pairs([1,2,3])+"<br>");
+                document.writeln(arr_pairs([2,4,6])+"<br>");
+                document.writeln(arr_pairs([2,4,16])+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    2
+    2
+    3
+----------------------------------------------------------------------------------------------------------------------------------------------------
+108. Write a JavaScript program to create the dot products of two given 3D vectors.
+     Note: The dot product is the sum of the products of the corresponding entries of the two sequences of numbers.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title> Create the dot products of two given 3D vectors</title>
+            <script>
+                function dot_product(vector1, vector2) {
+                    var result = 0;
+                    for (var i = 0; i < 3; i++) {
+                        result += vector1[i] * vector2[i];
+                    }
+                    return result;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(dot_product([1,2,3], [1,2,3])+"<br>");
+                document.writeln(dot_product([2,4,6], [2,4,6])+"<br>");
+                document.writeln(dot_product([1,1,1], [0,1,-1])+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    14
+    56
+    0
+----------------------------------------------------------------------------------------------------------------------------------------------------
+109. Write a JavaScript program to sort an array of all prime numbers between 1 and a given integer.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title> Sort an array of all prime numbers between 1 and a given integer</title>
+            <script>
+                function sort_prime(num) {
+                    var prime_num1 = [],
+                    prime_num2 = [];
+                    for (var i = 0; i <= num; i++) {
+                        prime_num2.push(true);
+                    }
+                    for (var i = 2; i <= num; i++) {
+                        if (prime_num2[i]) {
+                            prime_num1.push(i);
+                            for (var j = 1; i * j <= num; j++) {
+                                prime_num2[i * j] = false;
+                            }
+                        }
+                    }
+                    return prime_num1;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(sort_prime(5))
+                document.write.ln(sort_prime(11))
+                document.write.ln(sort_prime(19))
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    [2,3,5]
+    [2,3,5,7,11]
+    [2,3,5,7,11,13,17,19]
+----------------------------------------------------------------------------------------------------------------------------------------------------
+110. Write a JavaScript program to find the number of even values in sequence before the first
+     occurrence of a given number.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title> Find the number of even values in sequence before the first occurrence of a given number</title>
+            <script>
+                function find_numbers(arr_num, num) {
+                    var result = 0;
+                    for (var i = 0; i < arr_num.length; i++) {
+                        if (arr_num[i] % 2 === 0 && arr_num[i] !== num) {
+                            result++;
+                        }
+                        if (arr_num[i] === num) {
+                            return result;
+                        }
+                    }
+                    return -1;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(find_numbers([1,2,3,4,5,6,7,8], 5)+"<br>");
+                document.writeln(find_numbers([1,3,5,6,7,8], 6)+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    2
+    0
+----------------------------------------------------------------------------------------------------------------------------------------------------
+111. Write a JavaScript program to check a number from three given numbers where two numbers are
+     equal, find the third one.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title> Check a number from three given numbers where two numbers are equal, find the third one</title>
+            <script>
+                function find_third_number(x, y, z) {
+                    if((x!==y) && (x!==z) && (y!==z)) return "Three numbers are unequal.";
+                    if(x==y) return z;
+                    if(x==z) return y;
+                    return x;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(find_third_number(1,2,2)+"<br>");
+                document.writeln(find_third_number(1,1,2)+"<br>");
+                document.writeln(find_third_number(1,2,3)+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    1
+    2
+    Three numbers are unequal.
+----------------------------------------------------------------------------------------------------------------------------------------------------
+112. Write a JavaScript program to find the number of trailing zeros in the decimal representation
+     of the factorial of a given number.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title> Find the number of trailing zeros in the decimal representation of the factorial of a given number</title>
+            <script>
+                function trailing_zeros_factorial(n) {
+                    var result = 0;
+                    for (var i = 5; i <= n; i += 5) {
+                        var num = i;
+                        while (num % 5 === 0) {
+                            num /= 5;
+                            result++;
+                        }
+                    }
+                    return result;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(trailing_zeros_factorial(8)+"<br>");
+                document.writeln(trailing_zeros_factorial(9)+"<br>");
+                document.writeln(trailing_zeros_factorial(10)+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    1
+    1
+    2
+----------------------------------------------------------------------------------------------------------------------------------------------------
+113. Write a JavaScript program to calculate the sum of n + n/2 + n/4 + n/8 + .... where n is a
+     positive integer and all divisions are integer.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title> Calculate the sum of n + n/2 + n/4 + n/8 + ....</title>
+            <script>
+                function int_sum(num) {
+                    var s_sum = 0;
+                    while (num > 0) {
+                        s_sum += num;
+                        num = Math.floor(num / 2);
+                    }
+                    return s_sum;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(int_sum(8)+"<br>");
+                document.writeln(int_sum(9)+"<br>");
+                document.writeln(int_sum(26)+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    15
+    16
+    49
+----------------------------------------------------------------------------------------------------------------------------------------------------
+114. Write a JavaScript program to check whether a given string represents a correct sentence or
+     not. A string is considered correct sentence if it starts with the capital letter and ends
+     with a full stop (.).
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title> Check whether a given string represents a correct sentence or not</title>
+            <script>
+                function is_correct_Sentence(input_str) {
+                    var first_char = input_str[0];
+                    var last_char = input_str[input_str.length - 1];
+                    return /[A-Z]/.test(first_char) && last_char == "."
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(is_correct_Sentence("This tool will help you write better English and efficiently corrects texts.")+"<br>");
+                document.writeln(is_correct_Sentence("This tool will help you write better English and efficiently corrects texts")+"<br>");
+                document.writeln(is_correct_Sentence("this tool will help you write better English and efficiently corrects texts.")+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    true
+    false
+    false
+----------------------------------------------------------------------------------------------------------------------------------------------------
+115. Write a JavaScript program to check whether a matrix is a diagonal matrix or not. In linear
+     algebra, a diagonal matrix is a matrix in which the entries outside the main diagonal are
+     all zero (the diagonal from the upper left to the lower right).
+     Example:
+     [1, 0, 0], [0, 2, 0], [0, 0, 3] ]) = true
+     [1, 0, 0], [0, 2, 3], [0, 0, 3] ]) = false
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title> Check whether a matrix is a diagonal matrix or not</title>
+            <script>
+                function is_diagonal_matrix(user_matrix) {
+                    for (var i = 0; i < user_matrix.length; i++) {
+                        for (var j = 0; j < user_matrix.length; j++) {
+                            if (i !== j && user_matrix[i][j] !== 0)
+                                return false;
+                        }
+                    }
+                    return true;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(is_diagonal_matrix([[1, 0, 0], [0, 2, 0], [0, 0, 3] ])+"<br>");
+                document.writeln(is_diagonal_matrix([[1, 0, 0], [0, 2, 3], [0, 0, 3] ])+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    true
+    false
+----------------------------------------------------------------------------------------------------------------------------------------------------
+116. Write a JavaScript program to find all the possible options to replace the hash in a string
+     (Consists of digits and one hash (#)) with a digit to produce an integer divisible by 3.
+     For a string "2*0", the output should be : ["210", "240", "270"]
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title> Find all the possible options to replace the hash in a string</title>
+            <script>
+                function is_divisible_by3(mask_str) {
+                    var digitSum = 0,
+                        left = '0'.charCodeAt(),
+                        right = '9'.charCodeAt(),
+                        result = [],
+                        mask_data = mask_str.split(''),
+                        hash_pos = -1;
+
+                    for (var i = 0; i < mask_data.length; i++) {
+                        if (left <= mask_data[i].charCodeAt() && mask_data[i].charCodeAt() <= right) {
+                            digitSum += mask_data[i].charCodeAt() - left;
+                        } else {
+                            hash_pos = i;
+                        }
+                    }
+
+                    for (var i = 0; i < 10; i++) {
+                        if ((digitSum + i) % 3 === 0) {
+                            mask_data[hash_pos] = String.fromCharCode(left + i);
+                            result.push(mask_data.join(''));
+                        }
+                    }
+                    return result;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(is_divisible_by3("2#0")+"<br>");
+                document.writeln(is_divisible_by3("4#2")+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    ["210","240","270"]
+    ["402","432","462","492"]
+----------------------------------------------------------------------------------------------------------------------------------------------------
+117. Write a JavaScript program to check whether a given matrix is an identity matrix.
+     Note: In linear algebra, the identity matrix, or sometimes ambiguously called a unit matrix,
+     of size n is the n ? n square matrix with ones on the main diagonal and zeros else where.
+    [[1, 0, 0], [0, 1, 0], [0, 0, 1]] -> true
+    [[1, 0, 0], [0, 1, 0], [1, 0, 1]] -> false
+
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title> Check if a given matrix is an identity matrix</title>
+            <script>
+                function is_identity_Matrix(matrix_data) {
+                    for (var i = 0; i < matrix_data.length; i++) {
+                        for (var j = 0; j < matrix_data.length; j++) {
+                            if (matrix_data[i][j] !== 1 && i === j || matrix_data[i][j] && i !== j) {
+                                return false;
+                            }
+                        }
+                    }
+                    return true;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writen.ln(is_identity_Matrix([[1, 0, 0],  [0, 1, 0],  [0, 0, 1]])+"<br>");
+                document.writen.ln(is_identity_Matrix([[1, 0, 1],  [0, 1, 0],  [0, 0, 1]])+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    true
+    false
+----------------------------------------------------------------------------------------------------------------------------------------------------
+118. Write a JavaScript program to check whether a given number is in a given range.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title> Check if a given number is in a given range</title>
+            <script>
+                function is_inrange(x, y, z) {
+                    return y >= x && y <= z;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(is_inrange(1,2,3)+"<br>");
+                document.writeln(is_inrange(1,2,-3)+"<br>");
+                document.writeln(is_inrange(1.1,1.2,1.3)+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    true
+    false
+    true
+----------------------------------------------------------------------------------------------------------------------------------------------------
+119. Write a JavaScript program to check whether a given integer has an increasing digits sequence.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title> Check whether a given integer has an increasing digits sequence</title>
+            <script>
+                function is_increasing_digits_Sequence(num) {
+                    var arr_num = ('' + num).split('');
+                    for (var i = 0; i < arr_num.length - 1; i++) {
+                        if (parseInt(arr_num[i]) >= parseInt(arr_num[i + 1]))
+                            return false;
+                    }
+                    return true;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(is_increasing_digits_Sequence(123)+"<br>");
+                document.writeln(is_increasing_digits_Sequence(1223)+"<br>");
+                document.writeln(is_increasing_digits_Sequence(45677)+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    true
+    false
+    false
+----------------------------------------------------------------------------------------------------------------------------------------------------
+120. Write a JavaScript program to check whether a point lies strictly inside a given circle.
+     Input:
+     Center of the circle (x, y)
+     Radius of circle: r
+     Point inside a circle (a, b)
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title> Check whether a point lies strictly inside a given circle</title>
+            <script>
+                function check_a_point(a, b, x, y, r) {
+                    var dist_points = (a - x) * (a - x) + (b - y) * (b - y);
+                    r *= r;
+                    if (dist_points < r) {
+                        return true;
+                    }
+                    return false;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(check_a_point(0, 0, 2, 4, 6)+"<br>");
+                document.writeln(check_a_point(0, 0, 6, 8, 6)+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    true
+    false
+----------------------------------------------------------------------------------------------------------------------------------------------------
+121. Write a JavaScript program to check whether a given matrix is lower triangular or not.
+    Note: A square matrix is called lower triangular if all the entries above the main diagonal are zero.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title> Check whether a given matrix is lower triangular or not</title>
+            <script>
+                function lower_triangular_matrix(user_matrix) {
+                    for (var i = 0; i < user_matrix.length; i++) {
+                        for (var j = 0; j < user_matrix[0].length; j++) {
+                            if (j > i && user_matrix[i][j] !== 0)
+                                return false;
+                        }
+                    }
+                    return true;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(lower_triangular_matrix([[1, 0, 0],[2, 0, 0], [0, 3, 3]])+"<br>");
+                document.writeln(lower_triangular_matrix([[1, 0, 1],[2, 0, 0], [0, 3, 3]])+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    true
+    false
+----------------------------------------------------------------------------------------------------------------------------------------------------
+122. Write a JavaScript program to check whether a given array of integers represents either a
+     strictly increasing or a strictly decreasing sequence.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title> Check whether a given array of integers represents either a strictly increasing or a strictly decreasing sequence</title>
+            <script>
+                function is_monotonous(num) {
+                    if (num.length === 1) {
+                        return true;
+                    }
+                    var num_direction = num[1] - num[0];
+                    for (var i = 0; i < num.length - 1; i++) {
+                        if (num_direction * (num[i + 1] - num[i]) <= 0) {
+                            return false;
+                        }
+                    }
+                    return true;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(is_monotonous([1, 2, 3])+"<br>");
+                document.writeln(is_monotonous([1, 2, 2])+"<br>");
+                document.writeln(is_monotonous([-3, -2, -1])+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    true
+    false
+    true
+----------------------------------------------------------------------------------------------------------------------------------------------------
+123. Write a JavaScript program to find whether the members of a given array of integers is a
+     permutation of numbers from 1 to a given integer.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title> Find whether the members of a given array of integers is a permutation of numbers from 1 to a given integer</title>
+            <script>
+                function is_permutation(input_arr, n) {
+                    for (var i = 0; i < n; i++) {
+                        if (input_arr.indexOf(i + 1) < 0)
+                            return false;
+                    }
+                    return true;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(is_permutation([1, 2, 3, 4, 5], 5)+"<br>");
+                document.writeln(is_permutation([1, 2, 3, 5], 5)+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    true
+    false
+----------------------------------------------------------------------------------------------------------------------------------------------------
+124. Write a JavaScript program to create the value of NOR of two given booleans.
+     Note: In boolean logic, logical nor or joint denial is a truth-functional operator which
+     produces a result that is the negation of logical or. That is, a sentence of the form
+     (p NOR q) is true precisely when neither p nor q is true - i.e. when both of p and q are false
+     Sample Example:
+     For x = true and y = false, the output should be logical_Nor(x, y) = false;
+     For x = false and y = false, the output should be logical_Nor(x, y) = true.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title> Create the value of NOR of two given booleans</title>
+            <script>
+                function test_logical_Nor(a, b) {
+                    return (!a && !b)
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(test_logical_Nor(true, false)+"<br>");
+                document.writeln(test_logical_Nor(false, false)+"<br>");
+                document.writeln(test_logical_Nor(true, true)+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    false
+    true
+    false
+----------------------------------------------------------------------------------------------------------------------------------------------------
+125. Write a JavaScript program to find the longest string from a given array.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title> Find the longest string from a given array</title>
+            <script>
+                function longest_str_in_array(arra) {
+                    var max_str = arra[0].length;
+                    var ans = arra[0];
+                    for (var i = 1; i < arra.length; i++) {
+                        var maxi = arra[i].length;
+                        if (maxi > max_str) {
+                            ans = arra[i];
+                            max_str = maxi;
+                        }
+                    }
+                    return ans;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(longest_str_in_array(["ab", "a", "abcd"])+"<br>");
+                document.writeln(longest_str_in_array(["ab", "ab", "ab"])+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    abcd
+    ab
+----------------------------------------------------------------------------------------------------------------------------------------------------
+126. Write a JavaScript program to get the largest even number from an array of integers.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title> Get the largest even number from an array of integers</title>
+            <script>
+                function max_even(arra) {
+                    arra.sort((x, y) => y - x);
+
+                    for (var i = 0; i < arra.length; i++) {
+                        if (arra[i] % 2 == 0)
+                            return arra[i];
+                    }
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(max_even([20, 40, 200])+"<br>");
+                document,writeln(max_even([20, 40, 200, 301])+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    200
+    200
+----------------------------------------------------------------------------------------------------------------------------------------------------
+127. Write a JavaScript program to reverse the order of the bits in a given integer.
+     56 -> 111000 after reverse 7 -> 111
+     234 -> 11101010 after reverse 87 -> 1010111
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title> Reverse the order of the bits in a given integer</title>
+            <script>
+                function mirror_bits(n) {
+                    return parseInt(n.toString(2).split("").reverse().join(""), 2);
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(mirror_bits(56)+"<br>");
+                document.writeln(mirror_bits(234)+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    7
+    87
+----------------------------------------------------------------------------------------------------------------------------------------------------
+128. Write a JavaScript program to find the smallest round number that is not less than a given value.
+    Note: A round number is informally considered to be an integer that ends with one or more zeros.[3] So, 590 is rounder than 592, but 590 is less round than 600.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title> Find the smallest round number that is not less than a given value</title>
+            <script>
+                function nearest_round_number(num) {
+                    while (num % 10) {
+                        num++;
+                    }
+                    return num;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(nearest_round_number(56)+"<br>");
+                document.writeln(nearest_round_number(592)+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    60
+    600
+----------------------------------------------------------------------------------------------------------------------------------------------------
+129. Write a JavaScript program to find the smallest prime number strictly greater than a given number.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title> Find the smallest prime number strictly greater than a given number</title>
+            <script>
+                function next_Prime_num(num) {
+                    for (var i = num + 1;; i++) {
+                        var isPrime = true;
+                        for (var d = 2; d * d <= i; d++) {
+                            if (i % d === 0) {
+                                isPrime = false;
+                                break;
+                            }
+                        }
+                        if (isPrime) {
+                            return i;
+                        }
+                    }
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(next_Prime_num(3)+"<br>");
+                document.writeln(next_Prime_num(17)+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    5
+    19
+----------------------------------------------------------------------------------------------------------------------------------------------------
+130. Write a JavaScript program to find the number of even digits in a given integer.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title> Find the number of even digits in a given integer</title>
+            <script>
+                function even_digits(num) {
+                    var ctr = 0;
+                    while (num) {
+                        ctr += num % 2 === 0;
+                        num = Math.floor(num / 10);
+                    }
+                    return ctr;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(even_digits(123)+"<br>");
+                document.writeln(even_digits(1020)+"<br>");
+                document.writeln(even_digits(102)+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    1
+    3
+----------------------------------------------------------------------------------------------------------------------------------------------------
+131. Write a JavaScript program to create an array of prefix sums of the given array.
+     In computer science, the prefix sum, cumulative sum, inclusive scan, or simply scan of a sequence of numbers x0, x1, x2, ... is a second sequence of numbers y0, y1, y2, ..., the sums of prefixes of the input sequence:
+     y0 = x0
+     y1 = x0 + x1
+     y2 = x0 + x1+ x2
+     ...
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>Create an array of prefix sums of the given array</title>
+            <script>
+                function prefix_sums(arr) {
+                    var new_arr = [];
+                    for (var i = 0; i < arr.length; i++) {
+                        new_arr[i] = 0;
+                        for (var j = 0; j < i + 1; j++) {
+                            new_arr[i] += arr[j];
+                        }
+                    }
+                    return new_arr;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(prefix_sums([1, 2, 3, 4, 5])+"<br>");
+                document.writeln(prefix_sums([1, 2, -3, 4, 5])+"<br>");
+            </script>
+       </body>
+    </html>
+
+    Sample Output:
+
+    [1,3,6,10,15]
+    [1,3,0,4,9]
+----------------------------------------------------------------------------------------------------------------------------------------------------
+132. Write a JavaScript program to find all distinct prime factors of a given integer.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>Find all distinct prime factors of a given integer</title>
+            <script>
+                function prime_factors(num) {
+                    function is_prime(num) {
+                        for (let i = 2; i <= Math.sqrt(num); i++) {
+                            if (num % i === 0) return false;
+                        }
+                        return true;
+                    }
+                    const result = [];
+                    for (let i = 2; i <= num; i++) {
+                        while (is_prime(i) && num % i === 0) {
+                            if (!result.includes(i)) result.push(i);
+                                num /= i;
+                        }
+                    }
+                    return result;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(prime_factors(100)+"<br>");
+                document.writeln(prime_factors(101)+"<br>");
+                document.writeln(prime_factors(103)+"<br>");
+                document.writeln(prime_factors(104)+"<br>");
+                document.writeln(prime_factors(105)+"<br>");
+           </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    [2,5]
+    [101]
+    [103]
+    [2,13]
+    [3,5,7]
+----------------------------------------------------------------------------------------------------------------------------------------------------
+133. Write a JavaScript program to check whether a given fraction is proper or not.
+     Note: There are two types of common fractions, proper or improper. When the
+     numerator and the denominator are both positive, the fraction is called proper
+     if the numerator is less than the denominator, and improper otherwise.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>Check whether a given fraction is proper or not</title>
+            <script>
+                function proper_improper_test(num) {
+                    return Math.abs(num[0] / num[1]) < 1
+                    ? "Proper fraction." : "Improper fraction.";
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(proper_improper_test([2, 4])+"<br>");
+                document.writeln(proper(proper_improper_test([12, 300])+"<br>");
+                document._improper_test([103, 3])+"<br>");
+                document.writeln(proper_improper_test([104, 2])+"<br>");
+                document.writeln(proper_improper_test([5, 40])+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    Proper fraction.
+    Proper fraction.
+    Improper fraction.
+    Improper fraction.
+    Proper fraction.
+----------------------------------------------------------------------------------------------------------------------------------------------------
+134. Write a JavaScript program to change the characters (lower case) in a string where a turns
+     into z, b turns into y, c turns into x, ..., n turns into m, m turns into n, ..., z turns into a.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>Change the characters (lower case) in a string where a turns into z, b turns into y, c turns into x, ..., n turns into m, m turns into n, ..., z turns into a</title>
+            <script>
+                function change_char(str1) {
+                    var result = [];
+                    for (var i = 0; i < str1.length; i++) {
+                        var char_order = str1.charCodeAt(i) - 'a'.charCodeAt(0);
+                        change_char = 25 - char_order + 'a'.charCodeAt(0);
+                        result.push(String.fromCharCode(change_char));
+                    }
+                    return result.join("");
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.ln(change_char("abcxyz")+"<br>");
+                document.ln(change_char("python")+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    zyxcba
+    kbgslm
+----------------------------------------------------------------------------------------------------------------------------------------------------
+135. Write a JavaScript program to remove all characters from a given string that appear more than once.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>Remove all characters from a given string that appear more than once</title>
+            <script>
+                function remove_duplicate_cchars(str) {
+                    var arr_char = str.split("");
+                    var result_arr = [];
+
+                    for (var i = 0; i < arr_char.length; i++) {
+                        if (str.indexOf(arr_char[i]) === str.lastIndexOf(arr_char[i]))
+                            result_arr.push(arr_char[i]);
+                    }
+                    return result_arr.join("");
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(remove_duplicate_cchars("abcdabc")+"<br>");
+                document.writeln(remove_duplicate_cchars("python")+"<br>");
+                document.writeln(remove_duplicate_cchars("abcabc")+"<br>");
+                document.writeln(remove_duplicate_cchars("1365451")+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    d
+    python
+
+    364
+----------------------------------------------------------------------------------------------------------------------------------------------------
+136. Write a JavaScript program to replace the first digit in a string (should contains at least digit) with $ character.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>Replace the first digit in a string (should contains at least digit) with $ character</title>
+            <script>
+                function replace_first_digit(input_str) {
+                    return input_str.replace(/[0-9]/, '$');
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(replace_first_digit("abc1dabc")+"<br>");
+                document.writeln(replace_first_digit("p3ython")+"<br>");
+                document.writeln(replace_first_digit("ab1cabc")+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    abc$dabc
+    p$ython
+    ab$cabc
+----------------------------------------------------------------------------------------------------------------------------------------------------
+137. Write a JavaScript program to test whether a given integer is greater than 15 return the given
+     number, otherwise return 15.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>Test whether a given integer is greater than 15 return the given number, otherwise return 15.</title>
+            <script>
+                function test_fifteen(num) {
+                    while(num<15) {
+                        num++;
+                    }
+                    return num;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(test_fifteen("123")+"<br>");
+                document.writeln(test_fifteen("10")+"<br>");
+                document.writeln(test_fifteen("5")+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    123
+    15
+    15
+----------------------------------------------------------------------------------------------------------------------------------------------------
+138. Write a JavaScript program to reverse the bits of a given 16 bits unsigned short integer.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>Reverse the bits of a given 16 bits unsigned short integer</title>
+            <script>
+                function sixteen_bits_reverse(num) {
+                    var result = 0;
+                    for (var i = 0; i < 16; i++) {
+                        result = result * 2 + (num % 2);
+                        num = Math.floor(num / 2);
+                    }
+                    return result;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(sixteen_bits_reverse(12345)+"<br>");
+                document.writeln(sixteen_bits_reverse(10)+"<br>");
+                document.writeln(sixteen_bits_reverse(5)+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    39948
+    20480
+    40960
+----------------------------------------------------------------------------------------------------------------------------------------------------
+139. Write a JavaScript program to find the position of a rightmost round number in an array
+     of integers. Returns 0 if there are no round number.
+     Note: A round number is informally considered to be an integer that ends with one or more zeros.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>Find the position of a rightmost round number in an array of integers. Returns 0 if there are no round number</title>
+            <script>
+                function find_rightmost_round_number(input_arr) {
+                    var result = 0;
+                    for (var i = 0; i < input_arr.length; i++) {
+                        if (input_arr[i] % 10 === 0) {
+                            result = i;
+                        }
+                    }
+                    return result;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(find_rightmost_round_number([1, 22, 30, 54, 56])+"<br>");
+                document.writeln(find_rightmost_round_number([1, 22, 32, 54, 56])+"<br>");
+                document.writeln(find_rightmost_round_number([1, 22, 32, 54, 50])+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    2
+    0
+    4
+----------------------------------------------------------------------------------------------------------------------------------------------------
+140. Write a JavaScript program to check whether all the digits in a given number are the same or not.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>Check whether all the digits in a given number are the same or not</title>
+            <script>
+                function test_same_digit(num) {
+                    var first = num % 10;
+                    while (num) {
+                        if (num % 10 !== first) return false;
+                        num = Math.floor(num / 10);
+                    }
+                    return true
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(test_same_digit(1234)+"<br>");
+                document.writeln(test_same_digit(1111)+"<br>");
+                document.writeln(test_same_digit(22222222)+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    false
+    true
+    true
+----------------------------------------------------------------------------------------------------------------------------------------------------
+141. Write a JavaScript program to find the number of elements which presents in both of the given arrays.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>Find the number of elements which presents in both of the given arrays.</title>
+            <script>
+                function test_same_elements_both_arrays(arra1, arra2) {
+                    var result = 0;
+                    for(var i = 0; i < arra1.length; i++) {
+                        for(var j = 0; j < arra2.length; j++) {
+                            if(arra1[i] === arra2[j]) {
+                                result++;
+                            }
+                        }
+                    }
+                    return result;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(test_same_elements_both_arrays([1,2,3,4], [1,2,3,4])+"<br>");
+                document.writeln(test_same_elements_both_arrays([1,2,3,4], [1,2,3,5])+"<br>");
+                document.writeln(test_same_elements_both_arrays([1,2,3,4], [11,22,33,44])+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    4
+    3
+    0
+----------------------------------------------------------------------------------------------------------------------------------------------------
+142. Write a JavaScript program to simplify a given absolute path for a file in Unix-style.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>Simplify a given absolute path for a file in Unix-style.</title>
+            <script>
+                function simplify_path(main_path) {
+                    var parts = main_path.split('/'), new_path = [], length = 0;
+                    for (var i = 0; i < parts.length; i++) {
+                        var part = parts[i];
+                        if (part === '.' || part === '' || part === '..') {
+                            if (part === '..' && length > 0) {
+                                length--;
+                            }
+                            continue;
+                        }
+                        new_path[length++] = part;
+                    }
+
+                    if (length === 0) {
+                        return '/';
+                    }
+
+                    var result = '';
+                    for (var i = 0; i < length; i++) {
+                        result +=  '/'+new_path[i] ;
+                    }
+
+                    return result;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(simplify_path("/home/var/./www/../html//sql/")+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    /home/var/html/sql
+----------------------------------------------------------------------------------------------------------------------------------------------------
+143. Write a JavaScript program to sort the strings of a given array of strings in the order of increasing lengths.
+     Note: Do not change the order if the lengths of two string are same.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>Sort the strings of a given array of strings in the order of increasing lengths.</title>
+            <script>
+                function sort_by_string_length(arra) {
+                    for (var i = 0; i < arra.length; i++) {
+                        for (var j = i + 1; j < arra.length; j++) {
+                            if (arra[i].length > arra[j].length) {
+                                var m = arra[i];
+                                arra[i] = arra[j];
+                                arra[j] = m;
+                            }
+                        }
+                    }
+                    return arra;
+                }
+
+                var arra = ["xyz","acd","aa","bb","zzz","", "a","b"];
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln("Original array: "+ arra+"<br>");
+                document.writeln(sort_by_string_length(["xyz","acd","aa","bb","zzz","", "a","b"])+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    Original array: xyz,acd,aa,bb,zzz,,a,b
+
+    ["","a","b","bb","aa","xyz","acd","zzz"]
+----------------------------------------------------------------------------------------------------------------------------------------------------
+144. Write a JavaScript program to break an address of an url and put it's part into an array.
+     Note: url structure : ://.org[/] and there may be no part in the address.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>Break an address of an url and put it's part into an array.</title>
+            <script>
+                function break_address(url_add) {
+                    var data = url_add.split("://");
+                    var protocol = data[0];
+                    data = data[1].split(".com");
+                    var domain = data[0];
+                    data = data[1].split("/");
+
+                    if(data[1]){
+                        return [protocol,domain,data[1]]
+                    }
+
+                    return [protocol,domain]
+                }
+
+                var url_add = "https://www.w3resource.com/javascript-exercises/"
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln("Original address: "+url_add+"<br>");
+                document.writeln(break_address(url_add)+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    Original address: https://www.w3resource.com/javascript-exercises/
+    ["https","www.w3resource","javascript-exercises"]
+----------------------------------------------------------------------------------------------------------------------------------------------------
+145. Write a JavaScript program to find the maximum integer n such that 1 + 2 + ... + n <= a given integer.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>Find the maximum integer n.</title>
+            <script>
+                function sumn(val) {
+                    var sn = 0;
+                    var i = 0;
+                    while (sn <= val) {
+                        sn += i++;
+                    }
+                    return i - 2;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(sumn(11)+"<br>");
+                document.writeln(sumn(15)+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    4
+    5
+----------------------------------------------------------------------------------------------------------------------------------------------------
+146. Write a JavaScript program to compute the sum of cubes of all integer from 1 to a given integer.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>Compute the sum of cubes of all integer from 1 to an given integer.</title>
+            <script>
+                function sum_Of_Cubes(n) {
+                    var sumn = 0;
+
+                    for (var i = 1; i <= n; i++) {
+                        sumn += Math.pow(i, 3);
+                    }
+                    return sumn;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(sum_Of_Cubes(3)+"<br>");
+                document.writeln(sum_Of_Cubes(4)+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    36
+    100
+----------------------------------------------------------------------------------------------------------------------------------------------------
+147. Write a JavaScript program to compute the sum of all digits that occur in a given string.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>Compute the sum of all digits that occur in a given string.</title>
+            <script>
+                function sum_digits_from_string(dstr) {
+                    var dsum = 0;
+
+                    for (var i = 0; i < dstr.length; i++) {
+                        if (/[0-9]/.test(dstr[i]))
+                            dsum += parseInt(dstr[i]);
+                    }
+                    return dsum;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(sum_digits_from_string("abcd12efg9")+"<br>");
+                document.writeln(sum_digits_from_string("w3resource")+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    12
+    3
+----------------------------------------------------------------------------------------------------------------------------------------------------
+148. Write a JavaScript program to swap two halves of a given array of integers of even length.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>Swap two halves of a given array of integers of even length.</title>
+            <script>
+                function halv_array_swap(iarra) {
+                    if (((iarra.length)%2)!=0) {
+                        return false;
+                    }
+
+                    for (let i = 0; i < iarra.length / 2; i++) {
+                        const tmp = iarra[i];
+                        iarra[i] = iarra[i + iarra.length / 2];
+                        iarra[i + iarra.length / 2] = tmp;
+                    }
+                    return iarra;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(halv_array_swap([1,2,3,4,5,6])+"<br>");
+                document.writeln(halv_array_swap([1,2,3,4,5,6,7])+"<br>");
+            </script>
+       </body>
+    </html>
+
+    Sample Output:
+
+    [4,5,6,1,2,3]
+    false
+----------------------------------------------------------------------------------------------------------------------------------------------------
+149. Write a JavaScript program to change the capitalization of all letters in a given string.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>Change the capitalization of all letters in a given string.</title>
+            <script>
+                function change_case(txt) {
+                    var str1 = "";
+                    for (var i = 0; i < txt.length; i++) {
+                        if (/[A-Z]/.test(txt[i])) str1 += txt[i].toLowerCase();
+                        else str1 += txt[i].toUpperCase();
+                    }
+                    return str1;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(change_case("w3resource")+"<br>");
+                document.writeln(change_case("Germany")+"<br>");
+            </script>
+        </body>
+    </html>
+
+    Sample Output:
+
+    W3RESOURCE
+    gERMANY
+----------------------------------------------------------------------------------------------------------------------------------------------------
+150. Write a JavaScript program to swap pairs of adjacent digits of a given integer of even length.
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>Swap pairs of adjacent digits of a given integer of even length.</title>
+            <script>
+                function swap_adjacent_digits(n) {
+                    if (n%2!=0) {
+                        return false;
+                    }
+
+                    var result = 0,
+                    x = 1;
+                    while (n != 0) {
+                        var dg1 = n % 10, dg2 = ((n - dg1) / 10) % 10;
+                        result += x * (10 * dg1 + dg2);
+                        n = Math.floor(n / 100);
+                        x *= 100;
+                    }
+                    return result;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.writeln(swap_adjacent_digits(1234)+"<br>");
+                document.writeln(swap_adjacent_digits(123456)+"<br>");
+                document.writeln(swap_adjacent_digits(12345)+"<br>");
+            </script>
+       </body>
+    </html>
+
+    Sample Output:
+
+    2143
+    214365
+    false
+----------------------------------------------------------------------------------------------------------------------------------------------------

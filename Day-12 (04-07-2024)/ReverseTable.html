@@ -6,14 +6,14 @@
                 var tableObj = document.getElementById('employ');
                 document.writeln("<table border='1' cellspacing='0' cellpadding='5'>");
                 document.writeln("<tr>");
-                for(var i=0; i<tableObj.rows[0].cells.length; i++) {
+                for(var i=tableObj.rows[0].cells.length-1; i>=0; i--) {
                     document.writeln("<th>"+tableObj.rows[0].cells[i].innerHTML+"</th>");
                 }
                 document.writeln("</tr>");
 
                 for(var i=tableObj.rows.length-1; i>=1; i--) {
                     document.writeln("<tr>");
-                    for(var j=0; j<tableObj.rows[i].cells.length; j++) {
+                    for(var j=tableObj.rows[i].cells.length-1; j>=0; j--) {
                         document.writeln("<td style='color:blue;'>"+tableObj.rows[i].cells[j].innerHTML+"</td>");
                     }
                     document.writeln("</tr>");
@@ -25,7 +25,7 @@
     <body>
         <h1>Reverse Table</h1>
         <hr><br>
-        <table border="1" id="employ">
+        <table border="1" id="employ" cellpadding="5">
             <tr>
                 <th>SLNO</th>
                 <th>CANDIDATE'S NAME</th>
