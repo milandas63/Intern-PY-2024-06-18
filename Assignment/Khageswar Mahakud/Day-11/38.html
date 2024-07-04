@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <title>Frame Strings</title>
+    <style>
+        .frame {
+            font-family: monospace;
+            white-space: pre;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="frame-container" class="frame"></div>
+
+    <script>
+        function createFramedStrings(strings) {
+            const maxLength = Math.max(...strings.map(str => str.length));
+            const border = '*'.repeat(maxLength + 4); // Adjust for the frame
+
+            let result = border + '\n';
+            strings.forEach(str => {
+                const padding = ' '.repeat(maxLength - str.length);
+                result += `* ${str}${padding} *\n`;
+            });
+            result += border;
+
+            return result;
+        }
+
+        const strings = ["Hello", "World", "in", "a", "frame"];
+        const framedStrings = createFramedStrings(strings);
+
+        document.getElementById('frame-container').textContent = framedStrings;
+    </script>
+</body>
+
+</html>
+
