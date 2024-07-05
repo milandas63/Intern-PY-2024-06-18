@@ -1,0 +1,75 @@
+<html>
+
+<head>
+    <title>Table Column Reverser</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="reverse-button">Reverse Columns</button>
+    <br><br>
+    <table id="myTable">
+        <tr>
+            <th>SLNO</th>
+            <th>Candidate's Name</th>
+            <th>Father's Name</th>
+            <th>Gender</th>
+            <th>Mobaile no</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Milan Das</td>
+            <td>B K Das</td>
+            <td>Male</td>
+            <td>9856278654</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Prabhat Mishra</td>
+            <td>L N Mishra</td>
+            <td>Male</td>
+            <td>7879168568</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Sarmila Nayak</td>
+            <td>G C Nayak</td>
+            <td>Female</td>
+            <td>9987546789</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Bidyashree Dash</td>
+            <td>C S Dash</td>
+            <td>Female</td>
+            <td>7765342012</td>
+        </tr>
+    </table>
+
+    <script>
+        const table = document.getElementById("myTable");
+        const reverseButton = document.getElementById("reverse-button");
+
+        reverseButton.addEventListener("click", function() {
+            const columns = table.rows[0].children;
+            const columnCount = columns.length;
+
+            for (let row of table.rows) {
+                for (let i = 0; i < columnCount / 2; i++) {
+                    const temp = row.children[i].innerHTML;
+                    row.children[i].innerHTML = row.children[columnCount - 1 - i].innerHTML;
+                    row.children[columnCount - 1 - i].innerHTML = temp;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
