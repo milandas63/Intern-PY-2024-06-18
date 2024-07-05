@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <meta charset=utf-8 />
+        <title>Find Leap Year</title>
+        <script>
+            function leapyear(year) {
+                return (year%100 === 0) ? (year%400 === 0) : (year%4 === 0);
+            }
+        </script>
+    </head>
+    <body>
+        <script>
+            document.write(leapyear(2020)+"<br>");
+            document.write(leapyear(2016)+"<br>");
+            document.write(leapyear(2000)+"<br>");
+            document.write(leapyear(1700)+"<br>");
+            document.write(leapyear(1800)+"<br>");
+            document.write(leapyear(100)+"<br>");
+        </script>
+    </body>
+</html>
+
