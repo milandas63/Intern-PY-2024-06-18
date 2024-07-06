@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Positive and Negative</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .result {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Check Positive and Negative</h1>
+    <input type="number" id="num1" placeholder="Enter first number">
+    <input type="number" id="num2" placeholder="Enter second number">
+    <button onclick="checkPositiveNegative()">Check</button>
+    <div id="results"></div>
+
+    <script>
+        function checkPositiveNegative() {
+            // Get the input values
+            const num1 = parseInt(document.getElementById('num1').value);
+            const num2 = parseInt(document.getElementById('num2').value);
+            
+            // Determine if one is positive and the other is negative
+            const isOnePositiveAndOtherNegative = (num1 * num2) < 0;
+
+            // Get the results div
+            const resultsDiv = document.getElementById('results');
+            
+            // Clear previous results
+            resultsDiv.innerHTML = '';
+            
+            // Display the result
+            const resultDiv = document.createElement('div');
+            resultDiv.className = 'result';
+            if (isOnePositiveAndOtherNegative) {
+                resultDiv.textContent = `Yes, one is positive and the other is negative.`;
+            } else {
+                resultDiv.textContent = `No, both are either positive or negative.`;
+            }
+            resultsDiv.appendChild(resultDiv);
+        }
+    </script>
+</body>
+</html>
