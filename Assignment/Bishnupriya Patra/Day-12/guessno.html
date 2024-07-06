@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <meta charset=utf-8 />
+        <title>Guess a number</title>
+    </head>
+    <body>
+        <script>
+            // Get a random integer from 1 to 10 inclusive
+            const num = Math.ceil(Math.random() * 10);
+            document.write(num);
+            const gnum = prompt('Guess the number between 1 and 10 inclusive');
+            if (gnum == num)
+               document.write('Matched');
+            else
+               document.write('Not matched, the number was '+gnum);
+        </script>
+    </body>
+</html>
