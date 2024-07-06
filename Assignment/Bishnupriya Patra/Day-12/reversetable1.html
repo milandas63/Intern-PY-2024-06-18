@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reverse Table Columns</title>
+    <script>
+        function reverseColumns() {
+            var tableObj = document.getElementById('employ');
+            var reversedTable = "<table border='1' cellspacing='0' cellpadding='5'>";
+
+            for (var i = 0; i < tableObj.rows.length; i++) {
+                reversedTable += "<tr>";
+                for (var j = tableObj.rows[i].cells.length - 1; j >= 0; j--) {
+                    if (i == 0) {
+                        reversedTable += "<th>" + tableObj.rows[i].cells[j].innerHTML + "</th>";
+                    } else {
+                        reversedTable += "<td style='color:blue;'>" + tableObj.rows[i].cells[j].innerHTML + "</td>";
+                    }
+                }
+                reversedTable += "</tr>";
+            }
+            reversedTable += "</table>";
+
+            document.getElementById('reversedTableContainer').innerHTML = reversedTable;
+        }
+    </script>
+</head>
+<body>
+    <h1>REVERSE TABLE COLUMNS</h1>
+    <hr><br>
+    <table border="1" id="employ">    
+        <tr>
+            <td>SLNO</td>
+            <td>CANDIDATE'S NAME</td>
+            <td>FATHER'S NAME</td>
+            <td>GENDER</td>
+            <td>MOB NO</td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>shradha patra</td>
+            <td>vinod ch patra</td>
+            <td>female</td>
+            <td>5023497234</td>
+        </tr>
+        <tr>
+            <td>02</td>
+            <td>rocky patra</td>
+            <td>binod ch patra</td>
+            <td>male</td>
+            <td>7842169452</td>
+        </tr>
+        <tr>
+            <td>03</td>
+            <td>aditya</td>
+            <td>ashok swain</td>
+            <td>male</td>
+            <td>1245697532</td>
+        </tr>
+    </table>
+    <br><br><br>
+    <input type="button" value="Reverse Columns" onclick="reverseColumns();">
+    <br><br><br>
+    <div id="reversedTableContainer"></div>
+</body>
+</html>

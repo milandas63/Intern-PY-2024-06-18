@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Form Validation</title>
+        <script>
+            function checkdata() {
+                var each;
+                var mobileno = document.getElementById("mobile").value;
+                for(var i=0; i<mobileno.length; i++) {
+                    each = mobileno.charCodeAt(i);
+                    if( !(each>=48 && each<=57) ) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        </script>
+    </head>
+    <body>
+        <form action="ColorChooser.html" onSubmit="return checkdata();">
+            <table>
+                <tr>
+                    <td>Enter your mobile number: </td>
+                    <td><input type="text" id="mobile"></td>
+                </tr>
+            </table>
+            <br><br>
+            <input type="submit" value=" Submit ">
+        </form>
+    </body>
+</html>
