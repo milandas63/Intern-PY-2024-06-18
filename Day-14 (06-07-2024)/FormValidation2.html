@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Form Validation 2</title>
+        <script>
+            function validate() {
+                var each;
+
+                // Validate candidate name
+                var name = document.getElementById("name").value;
+                for(var i=0; i<name.length; i++) {
+                    each = name.charCodeAt(i);
+                    if( (each>=65 && each<=90) || (each>=97 && each<=122) || each==32 ) {
+                    } else {
+                        alert("Invalid character in name " + String.fromCharCode(each) );
+                        return false;
+                    }
+                }
+
+                // Validate candidate name
+                var father = document.getElementById("father").value;
+                for(var i=0; i<father.length; i++) {
+                    each = father.charCodeAt(i);
+                    if( (each>=65 && each<=90) || (each>=97 && each<=122) || each==32 ) {
+                    } else {
+                        alert("Invalid character in name " + String.fromCharCode(each) );
+                        return false;
+                    }
+                }
+
+                return true;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Form Validation 2</h1>
+        <hr><br>
+        <form action="MultiTable.html" onsubmit="return validate();">
+            <table>
+                <tr>
+                    <td><label for="">Candidate's name: </label></td>
+                    <td><input type="text" id="name"></td>
+                </tr>
+                <tr>
+                    <td><label for="">Father's name: </label></td>
+                    <td><input type="text" id="father"></td>
+                </tr>
+                <tr>
+                    <td><label for="">Mobile Number: </label></td>
+                    <td><input type="text" id="mobile"></td>
+                </tr>
+            </table>
+            <br><br>
+            <input type="submit" value=" Submit ">
+            <br><br>
+        </form>
+    </body>
+</html>
