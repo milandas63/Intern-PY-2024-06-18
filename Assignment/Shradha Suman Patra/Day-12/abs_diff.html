@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Absolute Difference Calculator</title>
+  <script>
+    function computeDifference(number) {
+      const difference = Math.abs(number - 19);
+      return number > 19 ? difference * 3 : difference;
+    }
+
+    function calculateDifference() {
+      const number = parseInt(document.getElementById('numberInput').value, 10);
+      const result = computeDifference(number);
+      document.getElementById('result').textContent = `The result is: ${result}`;
+    }
+  </script>
+</head>
+<body>
+  <h1>Compute Absolute Difference</h1>
+  <input type="number" id="numberInput" placeholder="Enter a number">
+  <button onclick="calculateDifference()">Calculate</button>
+  <p id="result"></p>
+</body>
+</html>
