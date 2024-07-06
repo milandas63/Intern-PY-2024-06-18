@@ -1,0 +1,5 @@
+I am just creating a file
+in the name file.txt.
+This file contains the existing text
+written in four line.
+This line is written through program
