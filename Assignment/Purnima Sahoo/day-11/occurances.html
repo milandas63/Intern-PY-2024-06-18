@@ -1,0 +1,27 @@
+html>
+    <head>
+        <title>Alpha Occurances</title>
+    </head>
+    <body>
+        <script>
+            var text = "A line of text containing many words";
+            var count = 0;
+            var each;
+            var alphaCount = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+            for(var i=0; i<text.length; i++) {
+                each = text.charCodeAt(i);
+                if(each>=65 && each<=90) {
+                    alphaCount[each-65]++;
+                } else {
+                    alphaCount[each-97]++;
+                }
+            }
+            document.writeln(text + "<br>")
+            for(var i=0; i<alphaCount.length; i++) {
+                if(alphaCount[i]>0) {
+                    document.writeln(String.fromCharCode(i+65) + " = " + alphaCount[i] + "<br>");
+                }
+            }
+        </script>
+    </body>
+</html>
