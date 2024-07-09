@@ -680,3 +680,12 @@ Repo URL: https://github.com/milandas63/Intern-PY-2024-06-18/
                 print(col, end='  ')
             print()
 
+    =   ASSIGNMENT
+        Create a database for Student Management System
+        1.  student
+        2.  class
+        3.  house
+        4.  optional
+
+        Enter at least 10 row in the above tables
+        Write a Python program to connect and fetch the data
