@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>JavaScript program to check two given numbers and return true if one of the numbers is 50 or if their sum is 50.</title>
+    </head>
+    <body>
+        <script>
+            function test50(x, y) {
+                return ((x == 50 || y == 50) || (x + y == 50));
+            }
+            document.write(test50(50, 50) + "<br>");
+            document.write(test50(20, 50) + "<br>");
+            document.write(test50(20, 20) + "<br>");
+            document.write(test50(20, 30) + "<br>");
+        </script>
+    </body>
+</html>
