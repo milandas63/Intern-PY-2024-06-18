@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>JavaScript program to check three given numbers, if the three numbers are same return 30 otherwise return 20 and if two numbers are same return 40.</title>
+        <script>
+            function three_numbers(x, y, z) {
+              if (x == y && y == z) {
+                return 30;
+              }
+
+              if (x == y || y == z || z == x) {
+                return 40;
+              }
+
+              return 20;
+            }
+        </script>
+    </head>
+    <body>
+        <script>
+            document.write(three_numbers(8, 8, 8)+"<br>");
+            document.write(three_numbers(8, 8, 18)+"<br>");
+            document.write(three_numbers(8, 7, 18)+"<br>");
+        </script>
+    </body>
+</html>

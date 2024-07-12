@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to check from three given integers that whether a number is greater than or equal to 20 and less than one of the others.</title>
+            <script>
+                function lessby20_others(x, y, z) {
+                    return (x >= 20 && (x < y || x < z)) ||
+                           (y >= 20 && (y < x || y < z)) ||
+                           (z >= 20 && (z < y || z < x));
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.write(lessby20_others(23, 45, 10)+"<br>");
+                document.write(lessby20_others(23, 23, 10)+"<br>");
+                document.write(lessby20_others(21, 66, 75)+"<br>");
+            </script>
+        </body>
+    </html>

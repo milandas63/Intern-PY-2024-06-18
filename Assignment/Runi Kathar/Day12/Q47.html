@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to check whether a given number is presents in the range 40..10000. </title>
+            <script>
+                function test_digit(x, y, n) {
+                    if (n < 40 || n > 10000)
+                      return false;
+                    else
+                      if (n >= x && n <= y)
+                        return true;
+                      else
+                        return false;
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.write(test_digit(40, 4000, 45)+"<br>");
+                document.write(test_digit(80, 320, 79)+"<br>");
+                document.write(test_digit(89, 4000, 30)+"<br>");
+            </script>
+        </body>
+    </html>

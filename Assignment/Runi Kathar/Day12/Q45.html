@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to check two given integer values and return true if one of the number is 15 or if their sum or difference is 15.</title>
+            <script>
+                function test_nmuber(x, y) {
+                    return (x === 15 || y === 15 || x + y === 15 || Math.abs(x - y) === 15);
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.write(test_nmuber(15, 9)+"<br>");
+                document.write(test_nmuber(25, 15)+"<br>");
+                document.write(test_nmuber(7, 8)+"<br>");
+                document.write(test_nmuber(25, 10)+"<br>");
+                document.write(test_nmuber(5, 9)+"<br>");
+                document.write(test_nmuber(7, 9)+"<br>");
+                document.write(test_nmuber(9, 25)+"<br>");
+            </script>
+        </body>
+    </html>

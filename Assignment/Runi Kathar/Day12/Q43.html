@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to check from three  given numbers (non negative integers) that two  or all of them have the same rightmost digit.</title>
+            <script>
+                function same_last_digit(p, q, r) {
+                    return (p % 10 === q % 10) ||
+                           (p % 10 === r % 10) ||
+                           (q % 10 === r % 10);
+
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.write(same_last_digit(22,32,42)+"<br>");
+                document.write(same_last_digit(102,302,2)+"<br>");
+                document.write(same_last_digit(20,22,45)+"<br>");
+            </script>
+        </body>
+    </html>

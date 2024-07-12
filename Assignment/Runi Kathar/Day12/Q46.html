@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>JavaScript program to check two given non-negative integers that whether one of the number (not both) is multiple of 7 or 11.</title>
+        <script>
+            function valCheck (a, b) {
+                if (!((a % 7 == 0 || a % 11 == 0) && (b % 7 == 0 || b % 11 == 0))) {
+                    return ((a % 7 == 0 || a % 11 == 0) || (b % 7 == 0 || b % 11 == 0));
+                } else
+                    return false;
+            }
+        </script>
+    </head>
+    <body>
+        <script>
+            document.write(valCheck(14, 21)+"<br>");
+            document.write(valCheck(14, 20)+"<br>");
+            document.write(valCheck(16, 20)+"<br>");
+        </script>
+    </body>
+</html>
