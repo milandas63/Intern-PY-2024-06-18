@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>JavaScript program to check whether two given integer values are in the range 50..99 (inclusive). Return true if either of them are in the said range.</title>
+        <script>
+            function check_numbers(x, y) {
+                if ((x >= 50 && x <= 99) || (y >= 50 && y <= 99)) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <script>
+        document.write(check_numbers(12, 101)+"<br>");
+        document.write(check_numbers(52, 80)+"<br>");
+        document.write(check_numbers(15, 99)+"<br>");
+    </script>
+        </body>
+</html>

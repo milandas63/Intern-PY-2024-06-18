@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to check whether a string starts with 'Java' and false otherwise.</title>
+            <script>
+                function start_spec_str(str) {
+                    if (str.length < 4) {
+                        return false;
+                    }
+                    front = str.substring(0, 4);
+                    if (front == 'Java') {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
+          
+            </script>
+        </head>
+        <body>
+            <script>
+            document.write(start_spec_str("JavaScript")+"<br>");
+            document.write(start_spec_str("Java")+"<br>");
+            document.write(start_spec_str("Python")+"<br>");
+        </script>
+        </body>
+    </html>

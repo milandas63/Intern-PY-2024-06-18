@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>JavaScript program to check whether a string “Script” presents at 5th (index 4) position in a given string, if “Script” presents in the string return the string without “Script” otherwise return the original one.</title>
+        <script>
+            function check_script(str) {
+                if (str.length < 6) {
+                    return str;
+                }
+
+                let result_str = str;
+                if (str.substring(10, 4) == 'Script') {
+                    result_str = str.substring(0, 4) + str.substring(10,str.length);
+                }
+                return result_str;
+            }
+        </script>
+    </head>
+    <body>
+        <script>
+        document.write(check_script("JavaScript")+"<br>");
+        document.write(check_script("CoffeeScript")+"<br>");
+    </script>
+        </body>
+</html>

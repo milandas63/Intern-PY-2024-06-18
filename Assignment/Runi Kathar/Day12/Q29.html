@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>JavaScript program to check whether three given integer values are in the range 50..99 (inclusive). Return true if one or more of them are in the said range.</title>
+        <script>
+            function check_three_nums(x, y, z) {
+                return (x >= 50 && x <= 99) || (y >= 50 && y <= 99) || (z >= 50 && z <= 99);
+            }
+        </script>
+    </head>
+    <body>
+        <script>
+        document.write(check_three_nums(50, 90, 99)+"<br>");
+        document.write(check_three_nums(5, 9, 199)+"<br>");
+        document.write(check_three_nums(65, 89, 199)+"<br>");
+        document.write(check_three_nums(65, 9, 199)+"<br>");
+   </script>
+    </body>
+</html>
