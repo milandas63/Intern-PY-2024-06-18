@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Write a JavaScript program to check from two given integers whether one of them is 8 or their sum or difference is 8.</title>
+        <script>
+            function check8(x, y) {
+                if (x == 8 || y == 8) {
+                    return true;
+                }
+                if (x + y == 8 || Math.abs(x - y) == 8) {
+                    return true;
+                }
+
+                return false;
+            }
+        </script>
+    </head>
+    <body>
+        <script>
+            document.write(check8(7, 8)+"<br>");
+            document.write(check8(16, 8)+"<br>");
+            document.write(check8(24, 32)+"<br>");
+            document.write(check8(17, 18)+"<br>");
+        </script>
+    </body>
+    </html>

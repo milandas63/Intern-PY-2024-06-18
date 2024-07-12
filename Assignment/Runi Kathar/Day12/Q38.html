@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>JavaScript program to check the total marks of a student in various examinations</title>
+            <script>
+                function exam_status(totmarks,is_exam) {
+                    if (is_exam) {
+                        return totmarks >= 90;
+                    }
+                    return (totmarks >= 89 && totmarks <= 100);
+                }
+            </script>
+        </head>
+        <body>
+            <script>
+                document.write(exam_status("78", " ")+"<br>");
+                document.write(exam_status("89", "true ")+"<br>");
+                document.write(exam_status("99", "true ")+"<br>");
+            </script>
+        </body>
+    </html>

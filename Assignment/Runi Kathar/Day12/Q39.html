@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>JavaScript program to compute the sum of the two given integers, If the sum is in the range 50..80  return 65 other wise return 80.</title>
+        <script>
+            function sortaSum(x, y) {
+                const sum_nums = x + y;
+                if (sum_nums >= 50 && sum_nums <= 80) {
+                    return 65;
+                }
+                return 80;
+            }
+        </script>
+    </head>
+    <body>
+        <script>
+            document.write(sortaSum(30,20)+"<br>");
+            document.write(sortaSum(90,80)+"<br>");
+        </script>
+    </body>
+</html>

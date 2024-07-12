@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JavaScript program to check whether the last digit of the three given integers is same.</title>
+    <script>
+        function last_digit(x, y, z) {
+            if ((x > 0) && y > 0 && z > 0) {
+                return (x % 10 == y % 10 && y % 10 == z % 10 && x % 10 == z % 10);
+            } else
+                return false;
+        }
+    </script>
+</head>
+<body>
+    <script>
+    document.write(last_digit(20, 30, 400)+"<br>");
+    document.write(last_digit(-20, 30, 400)+"<br>");
+    document.write(last_digit(20, -30, 400)+"<br>");
+    document.write(last_digit(20, 30, -400)+"<br>");
+    </script>
+</body>
+</html>

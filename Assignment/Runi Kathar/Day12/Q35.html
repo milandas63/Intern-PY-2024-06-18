@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>JavaScript program to check whether a specified character exists within the 2nd to 4th position in a given string</title>
+        <script>
+            function check_char(str, char) {
+                ctr = 0;
+                for (let i = 0; i < str.length; i++) {
+                    if (str.charAt(i) == char) {
+                        ctr++;
+                    }
+                }
+                return (ctr >= 2 && ctr <= 4);
+            }
+        </script>
+    </head>
+    <body>
+        <script>
+        document.write(check_char("Python", "y")+"<br>");
+        document.write(check_char("JavaScript", "a")+"<br>");
+        document.write(check_char("Console", "o")+"<br>");
+      </script>
+     </body>
+</html>
