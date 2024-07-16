@@ -868,10 +868,37 @@ Repo URL: https://github.com/milandas63/Intern-PY-2024-06-18/
     =   Python GUI comes in Tkinter
     =   To install tkinter in your machine, write the following:
     =   pip install tk
+    =   pip install pillow
+
     =   First Python Tkinter program:
             from tkinter import *
             root = Tk()
             root.title("Python GUI program")
+            root.iconbitmap("bird.ico")
             root.geometry("500x400")
             root.mainloop()
 
+    =   Parameters of Label component:
+        SN 	OPTION 	DESCRIPTION
+         1 	anchor          It specifies the exact position of the text within the size provided to the widget. The default value is CENTER, which is used to center the text within the specified space.
+         2 	bg              The background color displayed behind the widget.
+         3 	bitmap          It is used to set the bitmap to the graphical object specified so that, the label can represent the graphics instead of text.
+         4 	bd              It represents the width of the border. The default is 2 pixels.
+         5 	cursor          The mouse pointer will be changed to the type of the cursor specified, i.e., arrow, dot, etc.
+         6 	font            The font type of the text written inside the widget.
+         7 	fg              The foreground color of the text written inside the widget.
+         8 	height          The height of the widget.
+         9 	image           The image that is to be shown as the label.
+        10 	justify         It is used to represent the orientation of the text if the text contains multiple lines. It can be set to LEFT for left justification, RIGHT for right justification, and CENTER for center justification.
+        11 	padx            The horizontal padding of the text. The default value is 1.
+        12 	pady            The vertical padding of the text. The default value is 1.
+        13 	relief          The type of the border. The default value is FLAT.
+        14 	text            This is set to the string variable which may contain one or more line of text.
+        15 	textvariable 	The text written inside the widget is set to the control variable StringVar so that it can be accessed and changed accordingly.
+        16 	underline 	    We can display a line under the specified letter of the text. Set this option to the number of the letter under which the line will be displayed.
+        17 	width 	        The width of the widget. It is specified as the number of characters.
+        18 	wraplength 	    Instead of having only one line as the label text, we can break it to the number of lines where each line has the number of characters specified to this option.
+
++-----------------------+
+| Wednesday, 17-07-2024 |  Day-20
++-----------------------+
