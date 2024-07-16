@@ -1,0 +1,866 @@
+Start date: 2024-06-18
+
+Time Session-1: 10:30 am to 12:30 pm (Practical Session)
+Time Session-2: 03:30 pm to 05:30 pm (Class Room Mentoring)
+Total Strength: 21
+Subject: Python
+Repo URL: https://github.com/milandas63/Intern-PY-2024-06-18/
+
+
++---------------------+
+| Tuesday, 18-06-2024 |  Day-01
++---------------------+
+    =	Python was created by GUIDO VAN ROSSUM, and first released on February 20, 1991.
+		While you may know the python as a large snake, the name of the Python
+		programming language comes from an old BBC television comedy sketch series
+		called Monty Python's Flying Circus.
+
+	=	The name Python comes from Monty Python. When Guido van Rossum was creating
+		Python, he was also reading the scripts from BBC's Monty Python's Flying
+		Circus. He thought the name Python was appropriately short and slightly
+		mysterious.
+
+
++-----------------------+
+| Wednesday, 19-06-2024 |  Day-02
++-----------------------+
+    =   pyramid.py
+        diamond.py
+        palindrome
+
+    =   ASSIGNMENT
+        Write python code for the pattern programs:
+        d, e, f & n
+
+        Align the program tables.py
+
+
++----------------------+
+| Thursday, 20-06-2024 |  Day-03
++----------------------+
+    >>>
+    >>>
+    >>> # Single line comment
+    >>> """
+    ... These quotes allow to create
+    ... multi line comment with
+    ... in the python program
+    ... """
+    '\nThese quotes allow to create\nmulti line comment with\nin the python program\n'
+    >>>
+    >>>
+    >>> """
+    ... sdfsdfsdfsdfsafd
+    ... sdfsadfsafsafsfsadf
+    ... sadfsadfsafsaf
+    ... """
+    '\nsdfsdfsdfsdfsafd\nsdfsadfsafsafsfsadf\nsadfsadfsafsaf\n'
+    >>> 45 + 35
+    80
+    >>> 51 - 40
+    11
+    >>> 10 * 12
+    120
+    >>> 225 / 5
+    45.0
+    >>>
+    >>>
+    >>> name = 'Narendra Modi'
+    >>> name
+    'Narendra Modi'
+    >>>
+    #   LIST
+    >>> pms = ['Jawaharlal','Girilal','Indira','Rajeev']
+    >>> pms
+    ['Jawaharlal', 'Girilal', 'Indira', 'Rajeev']
+    >>> pms + [25, 35, 26, 46]
+    ['Jawaharlal', 'Girilal', 'Indira', 'Rajeev', 25, 35, 26, 46]
+    >>> pms
+    ['Jawaharlal', 'Girilal', 'Indira', 'Rajeev']
+    >>> pms = pms + [25, 35, 26, 46]
+    >>> pms
+    ['Jawaharlal', 'Girilal', 'Indira', 'Rajeev', 25, 35, 26, 46]
+    >>>
+    >>>
+    >>> pms[3]
+    'Rajeev'
+    #   A collection similar to an array of any data type. A list is embedded with square
+    #   brackets
+    >>>
+    >>>
+    #   Dictionary
+    >>> dict = {'name':'Milan Das','age':63,'gender':'Male','location':'Bhubaneswar'}
+    >>> dict['location']
+    'Bhubaneswar'
+    >>> dict['age']
+    63
+    #   A collection of multiple name:value pairs. A dictionary is embedded within curly braces
+    >>>
+    #   SET
+    >>> nos = {2,4,7,3,6,3,2,22,3,3,5,5,5,5,5}
+    >>> nos
+    {2, 3, 4, 5, 6, 7, 22}
+    >>> nos = {2,4,7,3,6,3,2,22,3,3,5,5,5,5,5,8}
+    >>> nos
+    {2, 3, 4, 5, 6, 7, 8, 22}
+    >>>
+    #   A collection of data that is not redundent + the date is sorted in assending order.
+    #   A set is embedded within curly braces.
+
+    =   ASSIGNMENT
+        37: Repetitively sum all digits of a number to determine the unisum (single digit)?
+            Example:     728394 = 7+2+8+3+9+4 = 33 = 3+3 = 6
+                     9778911223 = 9+7+7+8+9+1+1+2+2+3 = 49 = 4+9 = 13 = 1+3 = 4
+                     7978168568 = 7+9+7+8+1+6+8+5+6+8 = 65 = 6+5 = 11 = 1+1 = 2
+
+        38: Write a function that takes a list of strings and prints them, one per line, in
+            a rectangular frame.
+            For example the list ["Hello", "World", "in", "a", "frame"] gets printed as:
+                *********
+                * Hello *
+                * World *
+                * in    *
+                * a     *
+                * frame *
+                *********
+
++--------------------+
+| Friday, 21-06-2024 |  Day-04
++--------------------+
+    =   The string data type:
+
+    =   List of keywords used in Python:
+        There are 36 keywords in Python.
+        ['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await',
+         'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except',
+         'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda',
+         'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with',
+         'yield']
+
+    =   In an OOPs language, there are basically 3 member within a class:
+        1)  Field/Variable members
+        2)  Constructor members
+        3)  Method/Function members
+
+    =   class Human:
+            def __init__(self):
+                print('Line from Human class')
+        
+    =   Exception Handling
+            try:
+                xxxxxxxxxxxxxxxxxx
+                xxxxxxxxxxxxxxxxxx
+                xxxxxxxxxxxxxxxxxx
+            except <ErrorName>:
+                yyyyyyyyyyyyyyyyyy
+                yyyyyyyyyyyyyyyyyy
+            except <ErrorName>:
+                zzzzzzzzzzzzzzzzzz
+                zzzzzzzzzzzzzzzzzz
+            finally:
+                ffffffffffffffffff
+                ffffffffffffffffff
+
+
+
+    =   Python Built-in Exceptions
+        #   EXCEPTION 	            DESCRIPTION
+        >   ArithmeticError 	    Raised when an error occurs in numeric calculations
+        >   AssertionError 	        Raised when an assert statement fails
+                                    
+        >   AttributeError 	        Raised when attribute reference or assignment fails
+        >   Exception 	            Base class for all exceptions
+        >   EOFError 	            Raised when the input() method hits an "end of file"
+                                    condition (EOF)
+        >   FloatingPointError 	    Raised when a floating point calculation fails
+        >   GeneratorExit 	        Raised when a generator is closed (with the close() method)
+        >   ImportError 	        Raised when an imported module does not exist
+        >   IndentationError 	    Raised when indentation is not correct
+        >   IndexError 	            Raised when an index of a sequence does not exist
+        >   KeyError 	            Raised when a key does not exist in a dictionary
+        >   KeyboardInterrupt 	    Raised when the user presses Ctrl+c, Ctrl+z or Delete
+        >   LookupError 	        Raised when errors raised cant be found
+        >   MemoryError 	        Raised when a program runs out of memory
+        >   NameError 	            Raised when a variable does not exist
+        >   NotImplementedError 	Raised when an abstract method requires an inherited 
+                                    class to override the method
+        >   OSError 	            Raised when a system related operation causes an error
+        >   OverflowError 	        Raised when the result of a numeric calculation is too large
+        >   ReferenceError 	        Raised when a weak reference object does not exist
+        >   RuntimeError 	        Raised when an error occurs that do not belong to any 
+                                    specific exceptions
+        >   StopIteration 	        Raised when the next() method of an iterator has no 
+                                    further values
+        >   SyntaxError 	        Raised when a syntax error occurs
+        >   TabError 	            Raised when indentation consists of tabs or spaces
+        >   SystemError 	        Raised when a system error occurs
+        >   SystemExit 	            Raised when the sys.exit() function is called
+        >   TypeError 	            Raised when two different types are combined
+        >   UnboundLocalError 	    Raised when a local variable is referenced before assignment
+        >   UnicodeError 	        Raised when a unicode problem occurs
+        >   UnicodeEncodeError 	    Raised when a unicode encoding problem occurs
+        >   UnicodeDecodeError 	    Raised when a unicode decoding problem occurs
+        >   UnicodeTranslateError 	Raised when a unicode translation problem occurs
+        >   ValueError 	            Raised when there is a wrong value in a specified data type
+        >   ZeroDivisionError 	    Raised when the second operator in a division is zero
+
+    =   ArithmeticError types in Python include:
+        >   OverFlowError
+        >   ZeroDivisionError
+                arithmetic = 5/0
+                print(arithmetic)
+        >   FloatingPointError
+
+    =   ASSIGNMENT-1
+        Google and provide example code for every Error listed above.
+
+    =   ASSIGNMENT-2
+        Write a program to find the number of alphabet occurance in a string?
+        Example:
+            Hello World    Students Allowed       Holocaust
+               D = 1           A - 1                A - 1
+               E - 1           D - 2                C - 1
+               H - 1           E - 2                H - 1
+               L - 3           L - 1                L - 1
+               O - 2           N - 1                O - 2
+               R - 1           O - 1                S - 1
+               W - 1           S - 2                T - 1
+                               T - 2                U - 1
+                               U - 1
+                               W - 1
+
+
+    =   ASSIGNMENT-3
+        Self Study:
+        1. https://www.javatpoint.com/python-tutorial
+        2. https://www.tutorialspoint.com/python/index.htm
+        3. https://www.w3schools.com/python/
+
++---------------------+
+| Tuesday, 25-06-2024 |  Day-05
++---------------------+
+    =   How to clear the terminal screen in Python?
+        >>> import os
+        >>> os.system('cls')
+
+    =   String Slicer
+        >>> text = "Quick Brown Fox Jumps Over The Lazy Dog"
+        >>> print( text[6:11] )
+        Brown
+        >>> print( text[6:12] )
+        Brown
+        >>> print( text[6] )
+        B
+        >>> print( text[6:12:1] )
+        Brown
+        >>> print( text[6:12:2] )
+        Bon
+        >>> print( text[21:15] )
+
+        >>> print( text[21:15:-1] )
+         spmuJ
+        >>>
+
+    =   Search a text within another string
+        x = "Quick Brown Fox Jumps Over The Lazy Dog"
+        print(text.index('J'))
+        16
+
+    =   Take two numbers from the keyboard
+        Display a menu with Add, Subtract, Multiply and Divide
+        On selecting the action the two number are performed accordingly
+            >   Use input() function to take the number form keyboard
+
+    =   ASSIGNMENT-1
+        Document all commands/functions from the string module with example:
+
+
++-----------------------+
+| Wednesday, 26-06-2024 |  Day-06
++-----------------------+
+    =   What is a computer program?
+        A computer program is a set of instructions to the computer
+        in form of notation.
+
+    =   The features of a computer programming language are:
+        1)  It is executed by the sequence of line numbers
+        2)  Ability to iterate across one of more lines repeatedly - looping
+        3)  It can jump from one line to another line
+        4)  It can calculate arithmetic operations
+        5)  It can do comparision checking - condition checking
+
+    =   How many types of computer language?
+        There are 3 types of computer languages:
+        1)  Passive language
+            They are used for presentation purpose only.
+            It doesn't adhere to the features of a computer programming langauge.
+            Examples: HTML, SGML, .....
+        2)  Active language
+            That which fellow all the features and solve mission critial problems.
+            These programs reside in the executing machine
+            Example: C, C++, Java, Python, ....
+        3)  Dynamic language
+            These programs reside in the server machine. On request from
+            the requesting machine they are executed and only the result to
+            sent to the requesting machine. They run using the resources of
+            the residing machine.
+            Example: JSP, PHP, ASP
+
+    =   HTML stands Hyper Text Markup Language.
+        HTML is a passive language.
+        HTML language uses elements. The elements are reserve words wrapped
+        within angle brackets <>. Approximately there are 100 elements.
+
+    =   Every HTML program is written with the <html>...</html> element.
+        <html>...</html> is treated as the primary element.
+
+    =   1.  Character designs
+        2.  Link (external & internal)
+        3.  Table span
+
+    =   ROWSPAN & COLSPAN in TABLE
+        Write a program using HTML to looks like a simple calculator?
+        +----------------------------------+
+        |                                  |
+        +----------------------------------+
+        |  CE  |  AC  |  M   |  M+  |  /   |
+        |------+------+------+------+------|
+        |      |      |      |  %   |  *   |
+        |------+------+------+------+------|
+        |  7   |   8  |   9  |      |  -   |
+        |------+------+------+------+------|
+        |  4   |   5  |   6  |      |      |
+        |------+------+------+------|  +   |
+        |  1   |   2  |   3  |      |      |
+        |------+-------------+------+------|
+        |   .  |      0      |      =      |
+        +------+-------------+-------------+
+
+    =   ASSIGNMENT-1:
+        +-------+-------------------------------+-----------------------------------------------------------------------------------------------------------+
+        |       |                               |                                           POPULATION                                                      |
+        |       |                               |-----------------------------------------------------+-----------------------------------------------------|
+        |       |                               |                           URBAN                     |                           RURAL                     |
+        |       |                               |--------------------------+--------------------------+--------------------------+--------------------------|
+        |       |                               |           MALE           |           FEMALE         |          MALE            |           FEMALE         |
+        |       |                               |-----+------+-------+-----+-----+------+-------+-----+-----+------+-------+-----+-----+------+-------+-----|
+        |  SLNO | NAME OF THE DISTRICT          | <5  | 6-15 | 16-25 | >25 | <5  | 6-15 | 16-25 | >25 | <5  | 6-15 | 16-25 | >25 | <5  | 6-15 | 16-25 | >25 |
+        |-------+-------------------------------+-----+------+-------+-----+-----+------+-------+-----+-----+------+-------+-----+-----+------+-------+-----|
+        |       |                               |     |      |       |     |     |      |       |     |     |      |       |     |     |      |       |     |
+        |       |                               |     |      |       |     |     |      |       |     |     |      |       |     |     |      |       |     |
+        |       |                               |     |      |       |     |     |      |       |     |     |      |       |     |     |      |       |     |
+        |       |                               |     |      |       |     |     |      |       |     |     |      |       |     |     |      |       |     |
+        |       |                               |     |      |       |     |     |      |       |     |     |      |       |     |     |      |       |     |
+        |       |                               |     |      |       |     |     |      |       |     |     |      |       |     |     |      |       |     |
+        |       |                               |     |      |       |     |     |      |       |     |     |      |       |     |     |      |       |     |
+
+    =   ASSIGNMENT-2:
+        Two or more rows may be merged. Similarly, two or more columns may also be merged.
+        +----+--------------+----------+---------------------------------------+---------+
+        |    |              |          |                  POPULATION           |         |
+        |    |              |          |-------------------+-------------------+         |
+        |    |              |          |       URBAN       |      RURAL        |         |
+        |    |              |          |---------+---------+---------+---------+         |
+        |    |              |          |   GOVT  |   PVT   |   GOVT  |   PVT   |         |
+        |    |              |          |----+----+----+----+----+----+----+----+         |
+        | SL | DISTRICT     | STATE    |  M |  F |  M |  F |  M |  F |  M |  F |  TOTAL  |
+        +----+--------------+----------+----+----+----+----+----+----+----+----+---------+
+          1   BALASORE       ODISHA      245  211  245  211  245  211  245  211      1001
+          2   CUTTACK        ODISHA      245  211  245  211  245  211  245  211      1001
+
+
+
++----------------------+
+| Thursday, 27-06-2024 |  Day-07
++----------------------+
+    =   Cyber Security
+
++--------------------+
+| Friday, 28-06-2024 |  Day-08
++--------------------+
+    =   Cyber Security
+
++----------------------+
+| Saturday, 29-06-2024 |  Day-09
++----------------------+
+    =   HTML form for user inputs
+    =   Creating link with images
+    =   Creating part of an image as link
+    =   Use frameset to divide the screen into rows and columns
+
+    =   ASSIGNMENT
+        Complete all the above incomplete programs.
+
+
+
++---------------------+
+| Tuesday, 02-07-2024 |  Day-10
++---------------------+
+    =   CSS stands for Cascading Style Sheet
+
+    =   CSS is used for decorating HTML
+
+    =   CSS is in form of a pair of property:value;
+        There may be any number of such pair, property:values;
+        The properties are reserved words and need to be refered with the manual
+        The css descriptions are provided in the style attribute or in the style element.
+
+    =   There are about 100-110 element in HTML 5.0
+        There are 3 types of attributes that may be applied to an element
+        The 3 types of attributes are:
+        >   Standard attribute
+            Those attributes that are specifically created for a particular element
+        >   Common attribute
+            Those attributes that are applicable to all elements
+            Examples: ID, CLASS, STYLE, TITLE, LANG, DIR, etc.
+        >   Event attribute
+            Event attributes are only applied to those elements which has user interaction
+            ONCLICK, when the mouse button is clicked on an element;
+            ONDBLCLICK, when the mouse button is double-clicked on an element;
+            ONMOUSEDOWN, when the mouse button is pressed over an element;
+            ONMOUSEUP, when the mouse button is released over an element;
+            ONMOUSEOVER, when the mouse is moved onto an element;
+            ONMOUSEMOVE, when the mouse is moved while over an element;
+            ONMOUSEOUT, when the mouse is moved away from an element;
+            ONKEYPRESS, when a key is pressed and released over an element;
+            ONKEYDOWN, when a key is pressed down over an element;
+            ONKEYUP, when a key is released over an element.
+
+    =   There are 3 types of styling (CSS)
+        1.  Inline
+            They are applied in the style attribute of the element
+        2.  Internal
+            When the CSS is provided in the STYLE element, it is known as internal css.
+            Style element is normally defined within the <head>...</head> element.
+        3.  External
+            External CSS are class names with group of design properties/values are
+            defined in an external file. The file name must be .css. This external
+            css is linked with the HTML file using a <link> element.
+
+    =   HTML Colors are created with a combination of red, green and blue
+        Two hexadecimal digits are provided for each color:
+            #FFFFFF
+        
++-----------------------+
+| Wednesday, 03-07-2024 |  Day-11
++-----------------------+
+    =   Introductory JavaScript Programmes
+        1. Create patterns and figures by writing JavaScript programmes
+        2. Display all Prime Numbers between two given numbers
+        3. Print all Multiplication Table between two given numbers
+        4. Count the number of alphabetic occurances in a sentence
+
++----------------------+
+| Thursday, 04-07-2024 |  Day-12
++----------------------+
+    =   What is DOM?
+        The W3C Document Object Model (DOM) is a platform and language-neutral
+        interface that allows programs and scripts to dynamically access and 
+        update the content. The is a programming interface for web documents.
+        It represents the page so that programs can change the document structure,
+        style, and content. The DOM represents the document as nodes and objects;
+        that way, programming languages can interact with the page.
+
++--------------------+
+| Friday, 05-07-2024 |  Day-13
++--------------------+
+    =   Softskill class by Adit Jena
+
++----------------------+
+| Saturday, 06-07-2024 |  Day-14
++----------------------+
+    =   Write a program to rotate a string in the following manner:
+            B O S S
+            S B O S
+            S S B O
+            O S S B
+            B O S S
+
+    =   Form validataion
+
+    =   Python ternary operator
+
+    =   Python tuples
+
+    =   Python File Handling
+
+    =   What is a ternary operator?
+            work = "Done" if time>=12 else "Pending"
+
+        >>> good = False
+        >>> print( "Good" if good else "Bad" )
+        Bad
+        >>> good = True
+        >>> print( "Good" if good else "Bad" )
+        Good
+
+
+    =   What is a Tuple?
+        TUPLE is one of the built-in data types in Python. A Python tuple is a
+        sequence of comma separated items, enclosed in parentheses (). The items
+        in a Python tuple need NOT be of same data type. Tuples are immutable.
+
+        tup1 = ("Rohan", "Physics", 21, 69.75)
+        tup2 = (1, 2, 3, 4, 5)
+        tup3 = ("a", "b", "c", "d")
+        tup4 = (25.50, True, -55, 1+2j)
+
+        tup1 = ('physics', 'chemistry', 1997, 2000);
+        tup2 = (1, 2, 3, 4, 5, 6, 7 );
+        print ("tup1[0]: ", tup1[0]);
+        print ("tup2[1:5]: ", tup2[1:5]);
+
+    =   The empty tuple is written as two parentheses containing nothing −
+
+        tup1 = ();
+
+    =   To write a tuple containing a single value you have to include a comma, even
+        though there is only one value −
+
+        tup1 = (50,);
+
+        >>> collect = (10,20,50,30,22,44,21, 34, 66, 45)
+        >>> max(collect)
+        66
+        >>> min(collect)
+        10
+        >>> collect = ()
+        >>> len(collect)
+        0
+        >>> collect = (35)
+        >>> collect
+        35
+        >>> collect = (35,)
+        >>> collect
+        (35,)
+        >>>
+
+    =   What is Python File handling?
+        Python programs that perform read/write operation in a disk file is known as 
+        file handling.
+
+        File handling is associated with 4 types of statements:
+        1.  Open
+        2.  Read
+        3.  Write
+        4.  Close
+
+    =   The open statement takes 2 parameters:
+        1.  Name-of-the-file
+        2.  mode-of-operation
+
+    =   Mode in open file:
+        Where the following mode is supported:
+        r:  open an existing file for a read operation.
+        w:  open an existing file for a write operation. If the file already contains some
+            data then it will be overridden but if the file is not present then it creates
+            the file as well.
+        a:  open an existing file for append operation. It won’t override existing data.
+        r+: To read and write data into the file. The previous data in the file will be
+            overridden.
+        w+: To write and read data. It will override existing data.
+        a+: To append and read data from the file. It won’t override existing data.
+
+
+
+    =   What is lambda?
+        Python has a provision to create an unnamed function and assign it to a variable
+        which is known as lambda. Lambda functions allow you to create only one statement
+        in the function.
+
+            >>> add = lambda x,y:x+y
+            >>> print(add(10,20))
+            30
+        
+    =   How to read the content of a file character by character?
+
+
++---------------------+
+| Tuesday, 09-07-2024 |  Day-15
++---------------------+
+    =   MySQL
+        >   MySQL is a Relational DataBase Management System.\
+        >   MySQL is Open Source and Free
+        >   Currently MySQL is owned by Oracle Corporation
+
+    =   How to create an user in MySQL?
+        >   CREATE USER 'mca_python'@'localhost' IDENTIFIED BY 'mca_python';
+        >   GRANT ALL PRIVILEGES ON *.* TO 'mca_python'@'localhost';
+        >   CREATE DATABASE mca_python;
+        >   SHOW DATABASES;
+            +--------------------+
+            | Database           |
+            +--------------------+
+            | information_schema |
+            | batch060624        |
+            | contact            |
+            | mca_python         |
+            | mysql              |
+            | performance_schema |
+            | test               |
+            +--------------------+
+        >   USE mca_python;             # Connect to the database
+
+        >   CREATE TABLE relation(
+                rel_id          INT(6)          NOT NULL AUTO_INCREMENT,
+                rel_desc        VARCHAR(30)     NOT NULL UNIQUE,
+                PRIMARY KEY(rel_id)
+            );
+            INSERT INTO relation VALUES
+                (1, 'Family'),
+                (2, 'Parent'),
+                (3, 'Sibling'),
+                (4, 'School Friends'),
+                (5, 'College Friends'),
+                (6, 'Professional Friends'),
+                (7, 'Faculty');
+
+        >   CREATE TABLE location(
+                loc_id          INT(6)          NOT NULL AUTO_INCREMENT,
+                loc_name        VARCHAR(30)     NOT NULL UNIQUE,
+                PRIMARY KEY(loc_id)
+            );
+            INSERT INTO location VALUES
+                (1, 'Bhubaneswar'),
+                (2, 'Cuttack'),
+                (3, 'Berhampur'),
+                (4, 'Rourkella'),
+                (5, 'New Delhi'),
+                (6, 'US');
+
+        >   CREATE TABLE contact(
+                con_id          INT(6)          NOT NULL AUTO_INCREMENT,
+                con_name        VARCHAR(30)     NOT NULL UNIQUE,
+                rel_id          INT(6)          REFERENCES relation(rel_id),
+                loc_id          INT(6)          REFERENCES location(loc_id),
+                mobile_1        VARCHAR(15)     NOT NULL,
+                mobile_2        VARCHAR(15)     DEFAULT NULL,
+                PRIMARY KEY(con_id)
+            );
+            INSERT INTO contact VALUES
+                (1, 'Chinmayee Sahoo', 5, 1, '9348574969', NULL),
+                (2, 'Asish Pradhan',   5, 3, '6374958286', NULL),
+                (3, 'Milan Das',       7, 2, '7978168568', '9778911223');
+
+    >   SHOW TABLES;
+        +----------------------+
+        | Tables_in_mca_python |
+        +----------------------+
+        | contact              |
+        | location             |
+        | relation             |
+        +----------------------+
+
+    >   SELECT c.con_id,c.con_name,c.mobile_1,rel_desc,loc_name FROM contact AS c LEFT JOIN relation AS r ON c.rel_id=r.rel_id LEFT JOIN location AS l ON c.loc_id=l.loc_id;
+        +--------+-----------------+------------+-----------------+-------------+
+        | con_id | con_name        | mobile_1   | rel_desc        | loc_name    |
+        +--------+-----------------+------------+-----------------+-------------+
+        |      1 | Chinmayee Sahoo | 9348574969 | College Friends | Bhubaneswar |
+        |      2 | Asish Pradhan   | 6374958286 | College Friends | Berhampur   |
+        |      3 | Milan Das       | 7978168568 | Faculty         | Cuttack     |
+        +--------+-----------------+------------+-----------------+-------------+
+        3 rows in set (0.00 sec)
+
+    =   Before running the Python, install the MySQL connector in the machine:
+        >   pip install mysql-connector-python
+            C:\Users\Your Name\AppData\Local\Programs\Python\Python36-32\Scripts>python -m pip install mysql-connector-python
+
+
+    =   Write Python program to connect to MySQL
+        conn = mysql.connector.connect(
+            host = 'localhost',
+            user = 'root',
+            passwd = 'root',
+            database = 'mca_python'
+        )
+
+        curs = conn.cursor()
+        curs.execute('SELECT c.con_id,c.con_name,c.mobile_1,rel_desc,loc_name FROM contact AS c LEFT JOIN relation AS r ON c.rel_id=r.rel_id LEFT JOIN location AS l ON c.loc_id=l.loc_id')
+
+        for row in curs:
+            for col in row:
+                print(col, end='  ')
+            print()
+
+    =   ASSIGNMENT
+        Create a database for Student Management System
+        1.  student
+        2.  class
+        3.  house
+        4.  optional
+
+        Enter at least 10 row in the above tables
+        Write a Python program to connect and fetch the data
+
++-----------------------+
+| Wednesday, 10-07-2024 |  Day-16
++-----------------------+
+    =   Python-MySQL connection
+    =   Practical class
+
++----------------------+
+| Thursday, 11-07-2024 |  Day-17
++----------------------+
+    =   What is a Tuple?
+        Tuple is an immutable list.
+
+    =   WAP using the stretcher module to print mysql query in the
+        following order:
+        +--------+-------------+------------+-----------------+-------------+
+        | ID | NAME            | MOBILE     | RELATION        | LOCATION    |
+        +----+-----------------+------------+-----------------+-------------+
+        |  1 | Chinmayee Sahoo | 9348574969 | College Friends | Bhubaneswar |
+        |  2 | Asish Pradhan   | 6374958286 | College Friends | Berhampur   |
+        |  3 | Milan Das       | 7978168568 | Faculty         | Cuttack     |
+        +----+-----------------+------------+-----------------+-------------+
+
+        The SELECT query:
+        SELECT c.con_id,c.con_name,c.mobile_1,rel_desc,loc_name FROM contact AS c LEFT JOIN relation AS r ON c.rel_id=r.rel_id LEFT JOIN location AS l ON c.loc_id=l.loc_id
+
+        The Tuple for header:
+        list = ( (4,"ID"), (20,"NAME"), (12,"MOBILE"), (20,"RELATION"), (20,"LOCATION") )
+
+    =   Handy MySQL Commands:
+        
+        To login (from unix shell) use -h only if needed.:	
+            [mysql dir]/bin/mysql -h hostname -u root -p
+        
+        Create a database on the sql server:
+            create database [databasename];
+        
+        List all databases on the sql server:
+            show databases;
+        
+        Switch to a database:
+            use [database_name];
+        
+        To see all the tables in the db:
+            show tables;
+        
+        To see database's field formats:
+            describe [table name];
+        
+        To delete a db:
+            drop database [database name];
+        
+        To delete a table:
+            drop table [table name];
+        
+        Show all data in a table:
+            SELECT * FROM [table name];
+        
+        Returns the columns and column information pertaining to the designated table:
+            show columns from [table name];	
+        
+        Show certain selected rows:
+            SELECT * FROM [table name] WHERE [field name] = "whatever";	
+        
+        Show all records containing the name "Bob" AND the phone number '3444444':
+            SELECT * FROM [table name] WHERE name = "Bob" AND phone_number = '3444444';	
+        
+        Show all records not containing the name "Bob" AND the phone number '3444444' order by the phone_number field:
+            SELECT * FROM [table name] WHERE name != "Bob" AND phone_number = '3444444' order by phone_number;	
+        
+        Show all records starting with the letters 'bob' AND the phone number '3444444':
+            SELECT * FROM [table name] WHERE name like "Bob%" AND phone_number = '3444444';	
+        
+        Join tables on common columns 	select lookup.illustrationid, lookup.personid,person.birthday from lookup
+        left join person on lookup.personid=person.personid=statement to join birthday in person table with primary illustration id;
+        
+        Switch to the mysql db. Create a new user:
+            INSERT INTO [table name] (Host,User,Password) VALUES('%','user',PASSWORD('password'));
+
+        Change a users password.(from unix shell):
+            [mysql dir]/bin/mysqladmin -u root -h hostname.blah.org -p password 'new-password'
+    
+        Change a users password.(from MySQL prompt):
+            SET PASSWORD FOR 'user'@'hostname' = PASSWORD('passwordhere');
+
+        Switch to mysql db.Give user privilages for a db:
+            INSERT INTO [table name] (Host,Db,User,Select_priv,Insert_priv,Update_priv,Delete_priv,Create_priv,Drop_priv) VALUES ('%','db','user','Y','Y','Y','Y','Y','N');
+
+        To update info already in a table:
+            UPDATE [table name] SET Select_priv = 'Y',Insert_priv = 'Y',Update_priv = 'Y' where [field name] = 'user';
+
+        Delete a row(s) from a table:
+            DELETE from [table name] where [field name] = 'whatever';
+
+        Update database permissions/privilages:
+            FLUSH PRIVILEGES;
+
+        Delete a column:
+            alter table [table name] drop column [column name];
+
+        Add a new column to db:
+            alter table [table name] add column [new column name] varchar (20);
+
+        Change column name:
+            alter table [table name] change [old column name] [new column name] varchar (50);
+
+        Make a unique column so you get no dupes:
+            alter table [table name] add unique ([column name]);
+
+        Make a column bigger:
+            alter table [table name] modify [column name] VARCHAR(3);
+
+        Delete unique from table:
+            alter table [table name] drop index [colmn name];
+
+        Load a CSV file into a table:
+            LOAD DATA INFILE '/tmp/filename.csv' replace INTO TABLE [table name] FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' (field1,field2,field3);
+
+        Dump all databases for backup.
+            Backup file is sql commands to recreate all db's.	[mysql dir]/bin/mysqldump --user=root --password=blah --all-databases >/tmp/sql-01_backup.sql
+
+        Create Table Example 1
+            CREATE TABLE [table name] (firstname VARCHAR(20), middleinitial VARCHAR(3), lastname VARCHAR(35),suffix VARCHAR(3),officeid VARCHAR(10),userid VARCHAR(15),username VARCHAR(8),email VARCHAR(35),phone VARCHAR(25), groups VARCHAR(15),datestamp DATE,timestamp time,pgpemail VARCHAR(255));
+
+        Create Table Example 2
+            create table [table name] (personid int(50) not null auto_increment primary key,firstname varch
+
++--------------------+
+| Friday, 12-07-2024 |  Day-18
++--------------------+
+    =   Currently our database, "mca_python" contains the following tables:
+        +----------------------+
+        | Tables_in_mca_python |
+        +----------------------+
+        | contact              | address_book
+        | location             | places
+        | relation             | category
+        +----------------------+
+
+    =   CREATE TABLE address_book LIKE contact;
+        CREATE TABLE places LIKE location;
+        CREATE TABLE category LIKE relation;
+
+    =   ALTER TABLE address_book ADD email_1 VARCHAR(30) DEFAULT NULL;
+        ALTER TABLE address_book ADD email_2 VARCHAR(30) DEFAULT NULL;
+
+    =   ALTER TABLE address_book DROP email_2;
+
+    =   ALTER TABLE address_book MODIFY COLUMN email_1 VARCHAR(30) NOT NULL UNIQUE;
+
+    =   ALTER TABLE address_book CHANGE email_1 email_id VARCHAR(25);
+
+    =   INSERT INTO address_book(con_id,con_name,rel_id,loc_id,mobile_1,mobile_2) SELECT * FROM contact;
+        INSERT INTO address_book SELECT con_id,con_name,rel_id,loc_id,mobile_1,mobile_2,NULL FROM contact;
+
+    =   Fetch selected ids from the table:
+        SELECT * FROM address_book WHERE con_id=1 OR con_id=2;
+        SELECT * FROM address_book WHERE con_id>=1 AND con_id<=2;
+        SELECT * FROM address_book WHERE con_id IN (1,2);
+
+    =   INSERT INTO address_book VALUES(4, "Prasanna K Sahoo", 5, 3, "6788565546", null, "pnayak2023@gift.edu.in");
+        INSERT INTO address_book VALUES(5, "Swagatika K Behera", 5, 3, "7978165546", null, "swagatiak_b@gift.edu.in");
+
+    =   SELECT * FROM address_book WHERE con_name LIKE "%Sahoo";
+
+    =   UPDATE address_book SET mobile_1 = "7848852336";
+
+    =   DELETE FROM address_book WHERE con_id=4;
+
+    =   pip install tkinter
+
+
+
