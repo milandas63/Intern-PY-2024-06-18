@@ -2,7 +2,7 @@ from tkinter import *
 
 root = Tk()
 root.title('Dropdown Box')
-root.iconbitmap('images/bird.ico')
+root.iconbitmap('bird.ico')
 root.geometry('500x340')
 
 options = (
