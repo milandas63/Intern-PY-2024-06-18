@@ -1,0 +1,182 @@
+Django was invented by Lawrence Journal-World in 2003.
+Initial release to the public was in July 2005.
+
+    =   Django is a Python framework that makes it easier to create especially
+        database driven websites sites using Python.
+	=   Django takes care of the difficult stuff so that you can concentrate on
+        building your web applications.
+	=   Django emphasizes reusability of components, also referred to as 
+        DRY (Don't Repeat Yourself)
+	=   Django comes with ready-to-use features like
+        >	login system,
+        >   database connection
+        >   CRUD operations (Create Read Update Delete)
+
+	Django follows the MVT design pattern (Model View Template).
+    >   Model - The data you want to present, usually data from a database.
+    >   View - A request handler that returns the relevant template and content
+        based on the request from the user.
+    >   Template - A text file (like an HTML file) containing the layout
+        of the web page, with logic on how to display the data.
+
+    Model
+    The model provides data from the database.
+
+    View
+    A view is a function or method that takes http requests as arguments,
+    imports the relevant model(s), and finds out what data to send to the
+    template, and returns the final result.
+    The views are usually located in a file called views.py.
+
+    Template
+    A template is a file where you describe how the result should be represented.
+    <h1>My Homepage</h1>
+    <p>My name is {{ firstname }}.</p>
+    The templates of an application is located in a folder named templates.
+
+    URLs
+    Django also provides a way to navigate around the different pages in a website.
+    When a user requests a URL, Django decides which view it will send it to.
+    This is done in a file called urls.py.
+
+To Install Django the following must be installed:
+    >   Python (https://www.python.org/)
+    >   pip (https://pypi.org/project/pip/) - package installer for python
+
+    D:\IIG\Intern-PY-2024-06-18\Test\Django-Test>python --version
+    Python 3.11.3
+
+    D:\IIG\Intern-PY-2024-06-18\Test\Django-Test>pip --version
+    pip 24.1.2 from C:\Users\Dell\AppData\Local\Programs\Python\Python311\Lib\site-packages\pip (python 3.11)
+
+    D:\IIG\Intern-PY-2024-06-18\Test\Django-Test>django-admin --version
+    5.0.7
+
+Virtual Environment
+It is suggested to have a dedicated virtual environment for each Django
+project, and one way to manage a virtual environment is venv, which is
+included in Python.
+
+    Let us create a virtual environment in the name myworld:
+    py -m venv myworld
+
+    This will set up a virtual environment, and create a folder named
+    "myworld" with subfolders and files, like this:
+
+    myworld
+        Include
+        Lib
+        Scripts
+        pyvenv.cfg
+
+    Then you have to activate the environment, by typing this command:
+    myworld\Scripts\activate.bat
+
+    D:\IIG\Intern-PY-2024-06-18\Test\Django-Test>myworld\Scripts\activate.bat
+    (myworld) D:\IIG\Intern-PY-2024-06-18\Test\Django-Test>
+
+    Note: You must activate the virtual environment every time you open
+    the command prompt to work on your project.
+
+How to install Django?
+    Django is installed using pip, with this command:
+    (myworld) D:\IIG\Intern-PY-2024-06-18\Test\Django-Test>py -m pip install Django
+
+    Collecting Django
+      Downloading Django-5.0.7-py3-none-any.whl (8.2 MB)
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.2/8.2 MB 2.5 MB/s eta 0:00:00
+    Collecting asgiref<4,>=3.7.0
+      Downloading asgiref-3.8.1-py3-none-any.whl (23 kB)
+    Collecting sqlparse>=0.3.1
+      Downloading sqlparse-0.5.1-py3-none-any.whl (44 kB)
+         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.2/44.2 kB ? eta 0:00:00
+    Collecting tzdata
+      Using cached tzdata-2024.1-py2.py3-none-any.whl (345 kB)
+    Installing collected packages: tzdata, sqlparse, asgiref, Django
+    Successfully installed Django-5.0.7 asgiref-3.8.1 sqlparse-0.5.1 tzdata-2024.1
+
+    [notice] A new release of pip available: 22.3.1 -> 24.2
+    [notice] To update, run: python.exe -m pip install --upgrade pip
+
+Django Create Project
+    Navigate to the myworld folder, and run this command in the command prompt:
+    django-admin startproject examination
+    Django creates a examination folder on my computer,
+    with this content:
+
+    examination
+        manage.py
+        examination/
+            __init__.py
+            asgi.py
+            settings.py
+            urls.py
+            wsgi.py
+
+    Navigate to examination folder and type:
+        py manage.py runserver
+        Watching for file changes with StatReloader
+        Performing system checks...
+
+        System check identified no issues (0 silenced).
+
+        You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+        Run 'python manage.py migrate' to apply them.
+        July 30, 2024 - 15:19:44
+        Django version 5.0.7, using settings 'examination.settings'
+        Starting development server at http://127.0.0.1:8000/
+        Quit the server with CTRL-BREAK.
+
+
+Django Create App
+    An app is a web application that has a specific meaning in your project,
+    like a home page, a contact form, or a members database.
+
+    Create App from:
+    (myworld) D:\IIG\Intern-PY-2024-06-18\Test\Django-Test\myworld\examination>
+    The following command creates a list of files in the given hierarchy within
+    the members folder within the examination folder.
+
+        py manage.py startapp members
+
+        examination
+            manage.py
+            examination/
+            members/
+                migrations/
+                    __init__.py
+                __init__.py
+                admin.py
+                apps.py
+                models.py
+                tests.py
+                views.py
+
+The VIEWS.PY file
+    The default content of the view.py is as follows:
+        from django.shortcuts import render
+        # Create your views here.
+
+    Replace the content with the following:
+        from django.shortcuts import render
+        from django.http import HttpResponse
+        def members(request):
+            return HttpResponse("Hello world!")
+
+    Note: The name of the view does not have to be the same as the application.
+    I call it members because I think it fits well in this context.
+
+    The view has to be mapped within the urls.py.
+    Create a file named urls.py in the same folder as the views.py file,
+    and type this code in it:
+
+    examination/members/urls.py:
+
+        from django.urls import path
+        from . import views
+
+        urlpatterns = [
+            path('members/', views.members, name='members'),
+        ]
+
+
